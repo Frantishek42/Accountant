@@ -1,48 +1,62 @@
-2022-08-21T10:52:58.076748+0700 INFO Бот запущен!
-2022-08-21T10:58:03.513114+0700 INFO Бот запущен!
-2022-08-21T11:00:44.078392+0700 INFO Бот запущен!
-2022-08-21T11:07:05.520690+0700 INFO Бот запущен!
-2022-08-21T11:09:57.554751+0700 INFO Бот запущен!
-2022-08-21T11:44:59.859849+0700 INFO Бот запущен!
-2022-08-21T11:47:13.698784+0700 INFO Бот запущен!
-2022-08-21T11:48:30.294993+0700 INFO Бот запущен!
-2022-08-21T11:50:36.146042+0700 INFO Бот запущен!
-2022-08-21T11:51:09.938399+0700 INFO Бот запущен!
-2022-08-21T12:05:36.765452+0700 INFO Бот запущен!
-2022-08-21T12:06:32.370441+0700 INFO Бот запущен!
-2022-08-21T12:07:21.436501+0700 INFO Бот запущен!
-2022-08-21T12:17:30.707876+0700 INFO Бот запущен!
-2022-08-21T12:18:47.718492+0700 INFO Бот запущен!
-2022-08-21T12:19:57.756626+0700 INFO Бот запущен!
-2022-08-21T12:22:18.762631+0700 INFO Бот запущен!
-2022-08-21T12:26:38.866037+0700 INFO Бот запущен!
-2022-08-21T12:27:28.258972+0700 INFO Бот запущен!
-2022-08-21T12:29:08.171344+0700 INFO Бот запущен!
-2022-08-21T12:35:57.256925+0700 INFO Бот запущен!
-2022-08-21T12:37:22.947315+0700 INFO Бот запущен!
-2022-08-21T12:39:34.655052+0700 INFO Бот запущен!
-2022-08-21T12:39:48.990966+0700 INFO Бот запущен!
-2022-08-21T12:42:21.261934+0700 INFO Бот запущен!
-2022-08-21T13:18:11.379818+0700 INFO Бот запущен!
-2022-08-21T13:21:34.519750+0700 INFO Бот запущен!
-2022-08-21T14:25:06.128090+0700 INFO Бот запущен!
-2022-08-21T14:26:18.525772+0700 INFO Бот запущен!
-2022-08-21T14:26:56.619208+0700 INFO Бот запущен!
-2022-08-21T14:41:49.052658+0700 INFO Бот запущен!
-2022-08-21T14:43:51.935363+0700 INFO Бот запущен!
-2022-08-21T14:45:36.078509+0700 INFO Бот запущен!
-2022-08-21T14:56:38.612503+0700 INFO Бот запущен!
-2022-08-21T15:09:42.594730+0700 INFO Бот запущен!
-2022-08-21T15:09:58.318558+0700 ERROR OperationalError
-2022-08-21T15:12:12.612517+0700 INFO Бот запущен!
-2022-08-21T15:12:27.473869+0700 ERROR OperationalError
-2022-08-21T15:22:20.364531+0700 INFO Бот запущен!
-2022-08-21T15:22:27.022615+0700 INFO Затраты на алкоголь
-2022-08-21T15:22:32.653762+0700 INFO Денег потрачено: 550
-2022-08-21T15:22:32.690770+0700 ERROR OperationalError
-2022-08-21T15:24:20.788792+0700 INFO Бот запущен!
-2022-08-21T15:30:28.000080+0700 INFO Бот запущен!
-2022-08-21T15:35:21.789594+0700 INFO Бот запущен!
-2022-08-21T15:46:06.918276+0700 INFO Зашел добывать прибыль
-2022-08-21T15:46:08.561285+0700 INFO Добавить прибыль: подработки
-2022-08-21T15:46:12.653150+0700 INFO Сумма к добавлению: 6000
+2022-08-24T09:37:57.933481+0700 ERROR An error has been caught in function '_startup_polling', process 'MainProcess' (34887), thread 'MainThread' (139814254921536):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f28fb671ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f28fb7a5180>
+    │        └ <function start_polling at 0x7f28fb7915a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f28fb791fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f28fb669c90>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 320, in start_polling
+    loop.run_until_complete(self._startup_polling())
+    │    │                  │    └ <function Executor._startup_polling at 0x7f28fb792290>
+    │    │                  └ <aiogram.utils.executor.Executor object at 0x7f28fb669c90>
+    │    └ <function BaseEventLoop.run_until_complete at 0x7f28fce668c0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f28fce66830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f28fce683a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f28fd02bd90>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 377, in _startup_polling
+    await callback(self.dispatcher)
+          │        │    └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f28fb7a5180>
+          │        └ <aiogram.utils.executor.Executor object at 0x7f28fb669c90>
+          └ <function on_startup at 0x7f28fb671ea0>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 19, in on_startup
+    await filters.setup(dp)
+          │       │     └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f28fb7a5180>
+          │       └ <function setup at 0x7f28fd7afa30>
+          └ <module 'filters' from '/home/Frantishek/PycharmProjects/Accountant/filters/__init__.py'>
+
+TypeError: object NoneType can't be used in 'await' expression
+2022-08-24T09:39:36.853142+0700 INFO Бот запущен!
+2022-08-24T09:42:18.442816+0700 INFO Бот запущен!
+2022-08-24T09:42:26.942534+0700 INFO Зашел в команду кошелек
+2022-08-24T09:42:26.942905+0700 INFO Вывод денег
+2022-08-24T09:43:29.203901+0700 INFO Затраты на прочие
+2022-08-24T09:43:31.149377+0700 INFO Затраты на None
+2022-08-24T09:43:32.582853+0700 INFO Затраты на прочие
+2022-08-24T09:43:37.499035+0700 INFO Затраты на Связь
+2022-08-24T09:43:45.895306+0700 INFO Денег потрачено: 250

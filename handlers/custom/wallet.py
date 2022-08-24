@@ -9,10 +9,10 @@ from logger.log import logger
 @dp.message_handler(Wallet(), state='*')
 async def get_wallet(message: Message):
     logger.info('Зашел в команду кошелек')
-    wallet_user(message)
+    await wallet_user(message)
 
 
-def wallet_user(message: Message) -> None:
+async def wallet_user(message: Message) -> None:
     logger.info('Вывод денег')
     try:
         money = WalletDB.select()

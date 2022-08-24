@@ -16,7 +16,7 @@ async def on_startup(dis: Dispatcher) -> None:
     :return:
     """
     import filters
-    await filters.setup(dp)
+    filters.setup(dp)
 
     await set_default_commands(dis)
     logger.info("Бот запущен!")
