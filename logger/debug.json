@@ -1,62 +1,2343 @@
-2022-08-24T09:37:57.933481+0700 ERROR An error has been caught in function '_startup_polling', process 'MainProcess' (34887), thread 'MainThread' (139814254921536):
+2022-09-08T10:02:48.671960+0700 INFO Бот запущен!
+2022-09-08T10:02:53.383452+0700 INFO Зашел добывать прибыль
+2022-09-08T10:02:54.918999+0700 INFO Добавить прибыль: подработки
+2022-09-08T10:02:56.455089+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:03:03.316537+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:19:06.150164+0700 INFO Бот запущен!
+2022-09-08T10:19:11.317550+0700 INFO Зашел добывать прибыль
+2022-09-08T10:19:13.980086+0700 INFO Добавить прибыль: подработка
+2022-09-08T10:19:16.130676+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:19:22.991262+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:20:25.456209+0700 INFO Бот запущен!
+2022-09-08T10:20:30.987185+0700 INFO Зашел добывать прибыль
+2022-09-08T10:20:32.166613+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:20:33.545968+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:20:40.107396+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:22:43.601251+0700 INFO Бот запущен!
+2022-09-08T10:22:50.879535+0700 INFO Зашел добывать прибыль
+2022-09-08T10:22:53.223449+0700 INFO Добавить прибыль: подработка
+2022-09-08T10:22:54.656193+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:23:00.292500+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:25:30.731751+0700 INFO Бот запущен!
+2022-09-08T10:25:54.781076+0700 INFO Бот запущен!
+2022-09-08T10:26:03.597617+0700 INFO Зашел добывать прибыль
+2022-09-08T10:26:06.067279+0700 INFO Добавить прибыль: подработка
+2022-09-08T10:26:08.094342+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:26:17.720409+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:27:11.684599+0700 INFO Бот запущен!
+2022-09-08T10:27:22.028090+0700 INFO Зашел добывать прибыль
+2022-09-08T10:27:24.134601+0700 INFO Добавить прибыль: подработка
+2022-09-08T10:27:26.431221+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:27:31.654976+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:32:21.043363+0700 INFO Бот запущен!
+2022-09-08T10:32:34.456544+0700 INFO Зашел добывать прибыль
+2022-09-08T10:32:37.733642+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:32:39.064477+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:32:44.901343+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:33:24.427164+0700 INFO Бот запущен!
+2022-09-08T10:33:31.595785+0700 INFO Зашел добывать прибыль
+2022-09-08T10:33:34.872491+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:33:36.716509+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:33:43.800159+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:33:43.803604+0700 ERROR ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['продажа', 1, 0]
+2022-09-08T10:35:20.243210+0700 INFO Бот запущен!
+2022-09-08T10:35:28.436565+0700 INFO Зашел добывать прибыль
+2022-09-08T10:35:31.967182+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:35:33.249332+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:35:37.959633+0700 INFO Сумма к добавлению: 1500 500
+2022-09-08T10:35:37.963198+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (150282), thread 'MainThread' (140231145736000):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f8a0c0c7cc0>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
 Traceback (most recent call last):
 
   File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
     executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
-    │        │             │              └ <function on_startup at 0x7f28fb671ea0>
-    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f28fb7a5180>
-    │        └ <function start_polling at 0x7f28fb7915a0>
+    │        │             │              └ <function on_startup at 0x7f8a0c071ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f8a0c1a5060>
+    │        └ <function start_polling at 0x7f8a0c1915a0>
     └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
 
   File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
     executor.start_polling(
-    │        └ <function Executor.start_polling at 0x7f28fb791fc0>
-    └ <aiogram.utils.executor.Executor object at 0x7f28fb669c90>
-  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 320, in start_polling
-    loop.run_until_complete(self._startup_polling())
-    │    │                  │    └ <function Executor._startup_polling at 0x7f28fb792290>
-    │    │                  └ <aiogram.utils.executor.Executor object at 0x7f28fb669c90>
-    │    └ <function BaseEventLoop.run_until_complete at 0x7f28fce668c0>
-    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
-  File "/usr/lib64/python3.10/asyncio/base_events.py", line 633, in run_until_complete
-    self.run_forever()
-    │    └ <function BaseEventLoop.run_forever at 0x7f28fce66830>
+    │        └ <function Executor.start_polling at 0x7f8a0c191fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f8a0c069b70>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f8a0d876830>
     └ <_UnixSelectorEventLoop running=True closed=False debug=False>
   File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
     self._run_once()
-    │    └ <function BaseEventLoop._run_once at 0x7f28fce683a0>
+    │    └ <function BaseEventLoop._run_once at 0x7f8a0d8783a0>
     └ <_UnixSelectorEventLoop running=True closed=False debug=False>
   File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
     handle._run()
-    │      └ <function Handle._run at 0x7f28fd02bd90>
-    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │      └ <function Handle._run at 0x7f8a0da3bd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f8a0b5044f0>()>
   File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
     self._context.run(self._callback, *self._args)
     │    │            │    │           │    └ <member '_args' of 'Handle' objects>
-    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f8a0b5044f0>()>
     │    │            │    └ <member '_callback' of 'Handle' objects>
-    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f8a0b5044f0>()>
     │    └ <member '_context' of 'Handle' objects>
-    └ <Handle Task.task_wakeup(<Future finished result=None>)>
-> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 377, in _startup_polling
-    await callback(self.dispatcher)
-          │        │    └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f28fb7a5180>
-          │        └ <aiogram.utils.executor.Executor object at 0x7f28fb669c90>
-          └ <function on_startup at 0x7f28fb671ea0>
+    └ <Handle <TaskStepMethWrapper object at 0x7f8a0b5044f0>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698677, "message": {"message_id": 1117, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f8a0c1a5060>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f8a0c268850>
+                 │    │                │      └ <Update {"update_id": 168698677, "message": {"message_id": 1117, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f8a0c2d05e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f8a0c1a5cf0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f8a0c1a5060>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f8a0b5040a0>}
+                     │           │        └ (<Message {"message_id": 1117, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f8a0b4f5240>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f8a0b4f5240>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
 
-  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 19, in on_startup
-    await filters.setup(dp)
-          │       │     └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f28fb7a5180>
-          │       └ <function setup at 0x7f28fd7afa30>
-          └ <module 'filters' from '/home/Frantishek/PycharmProjects/Accountant/filters/__init__.py'>
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 114, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7f8a0b4e4790>)>
+    └ <Model: WalletProfit>
 
-TypeError: object NoneType can't be used in 'await' expression
-2022-08-24T09:39:36.853142+0700 INFO Бот запущен!
-2022-08-24T09:42:18.442816+0700 INFO Бот запущен!
-2022-08-24T09:42:26.942534+0700 INFO Зашел в команду кошелек
-2022-08-24T09:42:26.942905+0700 INFO Вывод денег
-2022-08-24T09:43:29.203901+0700 INFO Затраты на прочие
-2022-08-24T09:43:31.149377+0700 INFO Затраты на None
-2022-08-24T09:43:32.582853+0700 INFO Затраты на прочие
-2022-08-24T09:43:37.499035+0700 INFO Затраты на Связь
-2022-08-24T09:43:45.895306+0700 INFO Денег потрачено: 250
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f8a0b4e5090>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 35, 26, 107574), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7f8a0b4e43a0>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f8a0b712cb0>
+           │      └ <peewee.ModelInsert object at 0x7f8a0b504d00>
+           └ <function BaseQuery.execute at 0x7f8a0b7e6440>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f8a0b712cb0>
+           │    └ <function Insert._execute at 0x7f8a0b7f2dd0>
+           └ <peewee.ModelInsert object at 0x7f8a0b504d00>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f8a0b712cb0>
+                 │       └ <peewee.ModelInsert object at 0x7f8a0b504d00>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f8a0b504d00>
+             │        └ <function Database.execute at 0x7f8a0b4c1510>
+             └ <peewee.SqliteDatabase object at 0x7f8a0b712cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f8a0e3de1a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f8a0b4c1480>
+           └ <peewee.SqliteDatabase object at 0x7f8a0b712cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f8a0b7e2cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f8a0b5096c0>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7f8a0b772290>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f8a0b5096c0>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f8a0c0c7cc0>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:37:47.701532+0700 INFO Бот запущен!
+2022-09-08T10:37:52.167719+0700 INFO Зашел добывать прибыль
+2022-09-08T10:37:53.641428+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:37:55.381990+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:38:00.297257+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:38:00.301156+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (150620), thread 'MainThread' (140202811688768):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f83733cbcc0>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f8373375ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f83734a90f0>
+    │        └ <function start_polling at 0x7f83734955a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f8373495fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f837336dc00>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f8374b02830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f8374b043a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f8374cc7d90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f8372808520>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f8372808520>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f8372808520>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f8372808520>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698682, "message": {"message_id": 1122, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f83734a90f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f837356c8e0>
+                 │    │                │      └ <Update {"update_id": 168698682, "message": {"message_id": 1122, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f83735d45e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f83734a9d80>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f83734a90f0>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f8372808130>}
+                     │           │        └ (<Message {"message_id": 1122, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f83727f9240>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f83727f9240>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 115, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7f83727e8790>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f83727e9090>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 37, 50, 612072), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7f83727e83a0>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f8372a16d40>
+           │      └ <peewee.ModelInsert object at 0x7f8372808b80>
+           └ <function BaseQuery.execute at 0x7f8372aea440>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f8372a16d40>
+           │    └ <function Insert._execute at 0x7f8372af6dd0>
+           └ <peewee.ModelInsert object at 0x7f8372808b80>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f8372a16d40>
+                 │       └ <peewee.ModelInsert object at 0x7f8372808b80>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f8372808b80>
+             │        └ <function Database.execute at 0x7f83727c5510>
+             └ <peewee.SqliteDatabase object at 0x7f8372a16d40>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f837566a1a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f83727c5480>
+           └ <peewee.SqliteDatabase object at 0x7f8372a16d40>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f8372ae6d40>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f837280e980>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7f8372a76290>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f837280e980>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f83733cbcc0>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:40:57.860811+0700 INFO Бот запущен!
+2022-09-08T10:41:04.927750+0700 INFO Зашел добывать прибыль
+2022-09-08T10:41:08.135171+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:41:09.535628+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:41:14.143113+0700 INFO Сумма к добавлению: 1500 500
+2022-09-08T10:41:14.145755+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (151022), thread 'MainThread' (140595658049344):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fdeeabcfcc0>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7fdeeab79ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fdeeacad090>
+    │        └ <function start_polling at 0x7fdeeac995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7fdeeac99fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7fdeeab71ba0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fdeec27e830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fdeec2803a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fdeec443d90>
+    └ <Handle <TaskStepMethWrapper object at 0x7fdeea00c580>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7fdeea00c580>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7fdeea00c580>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7fdeea00c580>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698687, "message": {"message_id": 1127, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fdeeacad090>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fdeead70880>
+                 │    │                │      └ <Update {"update_id": 168698687, "message": {"message_id": 1127, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7fdeeadd85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fdeeacadd20>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fdeeacad090>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7fdeea00c7f0>}
+                     │           │        └ (<Message {"message_id": 1127, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7fdee9ffd1b0>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7fdee9ffd1b0>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 111, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7fdee9fec700>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7fdee9fed000>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 41, 3, 323051), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7fdee9fec310>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7fdeea21ace0>
+           │      └ <peewee.ModelInsert object at 0x7fdeea00cb20>
+           └ <function BaseQuery.execute at 0x7fdeea2ee3b0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7fdeea21ace0>
+           │    └ <function Insert._execute at 0x7fdeea2fad40>
+           └ <peewee.ModelInsert object at 0x7fdeea00cb20>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7fdeea21ace0>
+                 │       └ <peewee.ModelInsert object at 0x7fdeea00cb20>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7fdeea00cb20>
+             │        └ <function Database.execute at 0x7fdee9fc9480>
+             └ <peewee.SqliteDatabase object at 0x7fdeea21ace0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7fdeecde61a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7fdee9fc93f0>
+           └ <peewee.SqliteDatabase object at 0x7fdeea21ace0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7fdeea2eace0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7fdeea0124c0>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7fdeea27a200>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7fdeea0124c0>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fdeeabcfcc0>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:43:27.059472+0700 INFO Бот запущен!
+2022-09-08T10:43:31.464303+0700 INFO Зашел добывать прибыль
+2022-09-08T10:43:34.229187+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:43:35.765212+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:43:40.782603+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:43:40.785998+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (151353), thread 'MainThread' (140654175147840):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fec8a9ce040>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7fec8a979ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fec8aaad060>
+    │        └ <function start_polling at 0x7fec8aa995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7fec8aa99fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7fec8a971b70>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fec8c0c2830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fec8c0c43a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fec8c28bd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7fec89e0c4f0>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7fec89e0c4f0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7fec89e0c4f0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7fec89e0c4f0>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698692, "message": {"message_id": 1132, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fec8aaad060>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fec8ab70850>
+                 │    │                │      └ <Update {"update_id": 168698692, "message": {"message_id": 1132, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7fec8abd85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fec8aaadcf0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fec8aaad060>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7fec89e0c7c0>}
+                     │           │        └ (<Message {"message_id": 1132, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7fec89dfd1b0>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7fec89dfd1b0>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 111, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7fec89df0700>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7fec89df1000>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 43, 30, 152860), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7fec89df0310>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7fec8a01acb0>
+           │      └ <peewee.ModelInsert object at 0x7fec89e0cd00>
+           └ <function BaseQuery.execute at 0x7fec8a0ee3b0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7fec8a01acb0>
+           │    └ <function Insert._execute at 0x7fec8a0fad40>
+           └ <peewee.ModelInsert object at 0x7fec89e0cd00>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7fec8a01acb0>
+                 │       └ <peewee.ModelInsert object at 0x7fec89e0cd00>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7fec89e0cd00>
+             │        └ <function Database.execute at 0x7fec89dc9480>
+             └ <peewee.SqliteDatabase object at 0x7fec8a01acb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7fec8cc261a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7fec89dc93f0>
+           └ <peewee.SqliteDatabase object at 0x7fec8a01acb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7fec8a0e6cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7fec8a9a4900>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7fec8a07a200>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7fec8a9a4900>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fec8a9ce040>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:44:28.102390+0700 INFO Бот запущен!
+2022-09-08T10:44:31.675731+0700 INFO Зашел добывать прибыль
+2022-09-08T10:44:33.825943+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:44:35.054603+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:44:39.889184+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:44:39.891164+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (151502), thread 'MainThread' (140402961782592):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fb20d1cfcc0>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7fb20d179ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fb20d2ad090>
+    │        └ <function start_polling at 0x7fb20d2995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7fb20d299fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7fb20d171ba0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fb20e906830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fb20e9083a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fb20eacfd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7fb20c60c580>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7fb20c60c580>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7fb20c60c580>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7fb20c60c580>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698697, "message": {"message_id": 1137, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fb20d2ad090>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fb20d370880>
+                 │    │                │      └ <Update {"update_id": 168698697, "message": {"message_id": 1137, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7fb20d3d85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fb20d2add20>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fb20d2ad090>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7fb20c60c760>}
+                     │           │        └ (<Message {"message_id": 1137, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7fb20c5fd240>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7fb20c5fd240>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 112, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7fb20c5ec790>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7fb20c5ed090>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 44, 30, 378009), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7fb20c5ec3a0>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7fb20c81ace0>
+           │      └ <peewee.ModelInsert object at 0x7fb20c60cb20>
+           └ <function BaseQuery.execute at 0x7fb20c8ee440>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7fb20c81ace0>
+           │    └ <function Insert._execute at 0x7fb20c8fadd0>
+           └ <peewee.ModelInsert object at 0x7fb20c60cb20>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7fb20c81ace0>
+                 │       └ <peewee.ModelInsert object at 0x7fb20c60cb20>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7fb20c60cb20>
+             │        └ <function Database.execute at 0x7fb20c5c9510>
+             └ <peewee.SqliteDatabase object at 0x7fb20c81ace0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7fb20f46a1a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7fb20c5c9480>
+           └ <peewee.SqliteDatabase object at 0x7fb20c81ace0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7fb20c8eace0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7fb20c610940>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7fb20c87a290>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7fb20c610940>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fb20d1cfcc0>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:45:50.318566+0700 INFO Бот запущен!
+2022-09-08T10:45:55.439942+0700 INFO Зашел добывать прибыль
+2022-09-08T10:45:56.566289+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:45:57.590982+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:46:03.539615+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:46:03.541918+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (151677), thread 'MainThread' (140294045554496):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f98b12cbcc0>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f98b1275ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f98b13a90c0>
+    │        └ <function start_polling at 0x7f98b13955a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f98b1395fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f98b126dbd0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f98b2a6a830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f98b2a6c3a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f98b2c33d90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f98b07084c0>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f98b07084c0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f98b07084c0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f98b07084c0>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698702, "message": {"message_id": 1142, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f98b13a90c0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f98b146c8b0>
+                 │    │                │      └ <Update {"update_id": 168698702, "message": {"message_id": 1142, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f98b14d45e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f98b13a9d50>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f98b13a90c0>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f98b0708790>}
+                     │           │        └ (<Message {"message_id": 1142, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f98b06f91b0>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f98b06f91b0>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 112, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7f98b06ec700>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f98b06ed000>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 45, 53, 820024), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7f98b06ec310>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f98b0916d10>
+           │      └ <peewee.ModelInsert object at 0x7f98b0708b50>
+           └ <function BaseQuery.execute at 0x7f98b09ea3b0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f98b0916d10>
+           │    └ <function Insert._execute at 0x7f98b09f6d40>
+           └ <peewee.ModelInsert object at 0x7f98b0708b50>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f98b0916d10>
+                 │       └ <peewee.ModelInsert object at 0x7f98b0708b50>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f98b0708b50>
+             │        └ <function Database.execute at 0x7f98b06c5480>
+             └ <peewee.SqliteDatabase object at 0x7f98b0916d10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f98b35ce1a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f98b06c53f0>
+           └ <peewee.SqliteDatabase object at 0x7f98b0916d10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f98b09e6d10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f98b06f35c0>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7f98b0976200>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f98b06f35c0>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f98b12cbcc0>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:47:01.283514+0700 INFO Бот запущен!
+2022-09-08T10:47:07.325848+0700 INFO Зашел добывать прибыль
+2022-09-08T10:47:09.066498+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:47:10.397537+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:47:15.954729+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:47:15.957292+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (151844), thread 'MainThread' (139704645736256):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f0f763cfd40>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f0f76379ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f0f764ad0c0>
+    │        └ <function start_polling at 0x7f0f764995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f0f76499fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f0f76371bd0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f0f77af2830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f0f77af43a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f0f77cbbd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f0f7580c550>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f0f7580c550>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f0f7580c550>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f0f7580c550>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698707, "message": {"message_id": 1147, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f0f764ad0c0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f0f765708b0>
+                 │    │                │      └ <Update {"update_id": 168698707, "message": {"message_id": 1147, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f0f765d85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f0f764add50>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f0f764ad0c0>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f0f7580c670>}
+                     │           │        └ (<Message {"message_id": 1147, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f0f757fd120>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f0f757fd120>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 112, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7f0f757f0670>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f0f757f0f70>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 47, 5, 726637), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7f0f757f0280>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f0f75a1ad10>
+           │      └ <peewee.ModelInsert object at 0x7f0f7580c460>
+           └ <function BaseQuery.execute at 0x7f0f75aee320>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f0f75a1ad10>
+           │    └ <function Insert._execute at 0x7f0f75afacb0>
+           └ <peewee.ModelInsert object at 0x7f0f7580c460>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f0f75a1ad10>
+                 │       └ <peewee.ModelInsert object at 0x7f0f7580c460>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f0f7580c460>
+             │        └ <function Database.execute at 0x7f0f757c93f0>
+             └ <peewee.SqliteDatabase object at 0x7f0f75a1ad10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f0f786561a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f0f757c9360>
+           └ <peewee.SqliteDatabase object at 0x7f0f75a1ad10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f0f75aead10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f0f75811680>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7f0f75a7a170>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f0f75811680>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f0f763cfd40>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:49:51.270900+0700 INFO Бот запущен!
+2022-09-08T10:49:56.287943+0700 INFO Зашел добывать прибыль
+2022-09-08T10:49:58.132388+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:50:00.076727+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:50:04.788271+0700 INFO Сумма к добавлению: 1500 5000
+2022-09-08T10:50:04.792718+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (152220), thread 'MainThread' (140077858015040):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f665b6c7cc0>
+
+sqlite3.OperationalError: no such table: part_time_job
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f665b671ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f665b7a5060>
+    │        └ <function start_polling at 0x7f665b7915a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f665b791fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f665b669b70>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f665cde6830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f665cde83a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f665cfabd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f665ab044f0>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f665ab044f0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f665ab044f0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f665ab044f0>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698712, "message": {"message_id": 1152, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f665b7a5060>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f665b868850>
+                 │    │                │      └ <Update {"update_id": 168698712, "message": {"message_id": 1152, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f665b8d05e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f665b7a5cf0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f665b7a5060>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f665ab04730>}
+                     │           │        └ (<Message {"message_id": 1152, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f665aaf51b0>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f665aaf51b0>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 112, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7f665aae4700>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f665aae5000>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 49, 54, 880388), 'money_card': 0, 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7f665aae4310>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f665ad12cb0>
+           │      └ <peewee.ModelInsert object at 0x7f665ab04af0>
+           └ <function BaseQuery.execute at 0x7f665ade63b0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f665ad12cb0>
+           │    └ <function Insert._execute at 0x7f665adf2d40>
+           └ <peewee.ModelInsert object at 0x7f665ab04af0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f665ad12cb0>
+                 │       └ <peewee.ModelInsert object at 0x7f665ab04af0>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f665ab04af0>
+             │        └ <function Database.execute at 0x7f665aac1480>
+             └ <peewee.SqliteDatabase object at 0x7f665ad12cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f665d94e1a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 0, 0]
+           │    │           └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f665aac13f0>
+           └ <peewee.SqliteDatabase object at 0x7f665ad12cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f665ade2cb0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f665ab03900>
+    │       │         │        │           └ ('no such table: part_time_job',)
+    │       │         │        └ OperationalError('no such table: part_time_job')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7f665ad72200>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f665ab03900>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: part_time_job')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 0, 0]
+    │      │       └ 'INSERT INTO "part_time_job" ("start_date", "money_card", "money_cash") VALUES (?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f665b6c7cc0>
+
+peewee.OperationalError: no such table: part_time_job
+2022-09-08T10:52:13.607821+0700 INFO Бот запущен!
+2022-09-08T10:52:20.389045+0700 INFO Зашел добывать прибыль
+2022-09-08T10:52:22.312665+0700 INFO Добавить прибыль: подработка
+2022-09-08T10:52:24.053467+0700 INFO Пополнить: наличные
+2022-09-08T10:52:27.125260+0700 INFO Сумма к добавлению: 1500
+2022-09-08T10:52:27.129061+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (152533), thread 'MainThread' (140360595699520):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8)]
+    │      │       └ 'INSERT INTO "wallet_profit" ("start_date") VALUES (?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fa82fec5f40>
+
+sqlite3.OperationalError: no such table: wallet_profit
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7fa82fe71ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fa82ffa5180>
+    │        └ <function start_polling at 0x7fa82ff915a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7fa82ff91fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7fa82fe69c90>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fa831592830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fa8315943a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fa831757d90>
+    └ <Handle <TaskStepMethWrapper object at 0x7fa82f3044c0>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7fa82f3044c0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7fa82f3044c0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7fa82f3044c0>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698717, "message": {"message_id": 1157, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fa82ffa5180>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fa830068970>
+                 │    │                │      └ <Update {"update_id": 168698717, "message": {"message_id": 1157, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7fa8300d05e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fa82ffa5e10>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fa82ffa5180>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7fa82f3041c0>}
+                     │           │        └ (<Message {"message_id": 1157, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7fa82f2f5360>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7fa82f2f5360>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 112, in get_profit
+    WalletProfit.create()
+    │            └ <classmethod(<function Model.create at 0x7fa82f2e48b0>)>
+    └ <Model: WalletProfit>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7fa82f2e51b0>
+    └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 10, 52, 18, 932876)}
+         │    └ <classmethod(<function Model.insert at 0x7fa82f2e44c0>)>
+         └ <WalletProfit: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7fa82fecb610>
+           │      └ <peewee.ModelInsert object at 0x7fa82f304c70>
+           └ <function BaseQuery.execute at 0x7fa82f5e6560>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7fa82fecb610>
+           │    └ <function Insert._execute at 0x7fa82f5f2ef0>
+           └ <peewee.ModelInsert object at 0x7fa82f304c70>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7fa82fecb610>
+                 │       └ <peewee.ModelInsert object at 0x7fa82f304c70>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7fa82f304c70>
+             │        └ <function Database.execute at 0x7fa82f2c9630>
+             └ <peewee.SqliteDatabase object at 0x7fa82fecb610>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7fa8320f61a0>
+           │    │           │    └ [datetime.date(2022, 9, 8)]
+           │    │           └ 'INSERT INTO "wallet_profit" ("start_date") VALUES (?)'
+           │    └ <function Database.execute_sql at 0x7fa82f2c95a0>
+           └ <peewee.SqliteDatabase object at 0x7fa82fecb610>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7fa82f5e2dd0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7fa82fe23f00>
+    │       │         │        │           └ ('no such table: wallet_profit',)
+    │       │         │        └ OperationalError('no such table: wallet_profit')
+    │       │         └ <class 'peewee.OperationalError'>
+    │       └ <class 'peewee.OperationalError'>
+    └ <function reraise at 0x7fa82f56e3b0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7fa82fe23f00>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('no such table: wallet_profit')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8)]
+    │      │       └ 'INSERT INTO "wallet_profit" ("start_date") VALUES (?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7fa82fec5f40>
+
+peewee.OperationalError: no such table: wallet_profit
+2022-09-08T10:54:26.115570+0700 INFO Бот запущен!
+2022-09-08T10:54:33.795993+0700 INFO Зашел добывать прибыль
+2022-09-08T10:54:35.236019+0700 INFO Добавить прибыль: продажа
+2022-09-08T10:54:37.482478+0700 INFO Пополнить: нал./безнал.
+2022-09-08T10:54:44.655405+0700 INFO Сумма к добавлению: 1550 5000
+2022-09-08T10:55:14.757532+0700 INFO Зашел в команду кошелек
+2022-09-08T10:55:14.758099+0700 INFO Вывод денег
+2022-09-08T10:55:30.321675+0700 INFO Зашел добывать прибыль
+2022-09-08T10:55:31.858541+0700 INFO Добавить прибыль: заработная платы
+2022-09-08T10:55:33.393512+0700 INFO Пополнить: карту
+2022-09-08T10:55:38.227506+0700 INFO Сумма к добавлению: 67000
+2022-09-08T10:55:38.229226+0700 ERROR ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['заработная платы', 1, 0]
+2022-09-08T10:55:53.977264+0700 INFO Зашел в команду кошелек
+2022-09-08T10:55:53.977850+0700 INFO Вывод денег
+2022-09-08T11:00:52.476494+0700 INFO Бот запущен!
+2022-09-08T11:01:01.079541+0700 INFO Зашел добывать прибыль
+2022-09-08T11:01:02.922374+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:01:06.711074+0700 INFO Пополнить: нал./безнал.
+2022-09-08T11:01:12.240875+0700 INFO Сумма к добавлению: 1500 500
+2022-09-08T11:01:12.266693+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T11:01:22.992522+0700 INFO Зашел в команду кошелек
+2022-09-08T11:01:22.993118+0700 INFO Вывод денег
+2022-09-08T11:03:07.236636+0700 INFO Бот запущен!
+2022-09-08T11:10:45.280958+0700 INFO Бот запущен!
+2022-09-08T11:10:51.682890+0700 INFO Зашел добывать прибыль
+2022-09-08T11:10:54.292636+0700 INFO Добавить прибыль: продажа
+2022-09-08T11:10:56.750259+0700 INFO Пополнить: нал./безнал.
+2022-09-08T11:11:01.563160+0700 INFO Сумма к добавлению: 5666
+2022-09-08T11:11:14.671134+0700 INFO Сумма к добавлению: 5000 5000
+2022-09-08T11:11:14.678450+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['продажа', 1, 0]
+2022-09-08T11:11:19.381511+0700 INFO Зашел в команду кошелек
+2022-09-08T11:11:19.381811+0700 INFO Вывод денег
+2022-09-08T11:11:29.109844+0700 INFO Зашел добывать прибыль
+2022-09-08T11:11:31.260677+0700 INFO Добавить прибыль: заработная платы
+2022-09-08T11:11:33.206775+0700 INFO Пополнить: карту
+2022-09-08T11:11:39.557997+0700 INFO Сумма к добавлению: 67000
+2022-09-08T11:11:39.561240+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['заработная платы', 1, 0]
+2022-09-08T11:11:46.927508+0700 INFO Зашел в команду кошелек
+2022-09-08T11:11:46.928065+0700 INFO Вывод денег
+2022-09-08T11:25:07.200260+0700 INFO Бот запущен!
+2022-09-08T11:25:22.560198+0700 INFO Бот запущен!
+2022-09-08T11:25:28.602881+0700 INFO Зашел добывать прибыль
+2022-09-08T11:25:34.235324+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:25:36.180217+0700 INFO Пополнить: нал./безнал.
+2022-09-08T11:25:56.765598+0700 INFO Сумма к добавлению: 1000 5000
+2022-09-08T11:25:56.774086+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T11:26:11.406391+0700 INFO Зашел в команду кошелек
+2022-09-08T11:26:11.406904+0700 INFO Вывод денег
+2022-09-08T11:27:39.337306+0700 INFO Бот запущен!
+2022-09-08T11:27:45.206660+0700 INFO Зашел добывать прибыль
+2022-09-08T11:27:47.876879+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:27:49.404292+0700 INFO Пополнить: нал./безнал.
+2022-09-08T11:28:04.560542+0700 INFO Сумма к добавлению: 15000 5000
+2022-09-08T11:28:04.567919+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T11:31:04.991173+0700 INFO Бот запущен!
+2022-09-08T11:31:23.218731+0700 INFO Бот запущен!
+2022-09-08T11:31:34.602850+0700 INFO Зашел добывать прибыль
+2022-09-08T11:31:36.736189+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:31:39.193539+0700 INFO Пополнить: нал./безнал.
+2022-09-08T11:32:09.402113+0700 INFO Сумма к добавлению: 15000 5000
+2022-09-08T11:32:09.428756+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T11:35:31.440115+0700 INFO Бот запущен!
+2022-09-08T11:35:40.861946+0700 INFO Зашел добывать прибыль
+2022-09-08T11:35:42.705492+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:35:45.162915+0700 INFO Пополнить: нал./безнал.
+2022-09-08T11:35:53.252581+0700 INFO Сумма к добавлению: 15000 5000
+2022-09-08T11:35:53.279444+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T11:38:42.931100+0700 INFO Бот запущен!
+2022-09-08T11:39:09.965741+0700 INFO Зашел добывать прибыль
+2022-09-08T11:39:13.037739+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:39:14.779143+0700 INFO Пополнить: нал безнал
+2022-09-08T11:39:21.434438+0700 INFO Сумма к добавлению: 15000 5000
+2022-09-08T11:39:21.461667+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T11:40:39.158350+0700 INFO Зашел в команду кошелек
+2022-09-08T11:40:39.159014+0700 INFO Вывод денег
+2022-09-08T11:40:49.601543+0700 INFO Зашел добывать прибыль
+2022-09-08T11:40:51.139187+0700 INFO Добавить прибыль: заработная платы
+2022-09-08T11:40:53.493876+0700 INFO Пополнить: карту
+2022-09-08T11:40:58.101552+0700 INFO Сумма к добавлению: 67000
+2022-09-08T11:40:58.104610+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['заработная платы', 1, 0]
+2022-09-08T11:41:35.995628+0700 INFO Зашел добывать прибыль
+2022-09-08T11:41:39.676460+0700 INFO Добавить прибыль: подработка
+2022-09-08T11:41:42.646132+0700 INFO Пополнить: наличные
+2022-09-08T11:41:46.856985+0700 INFO Сумма к добавлению: 1500
+2022-09-08T11:42:18.151709+0700 INFO Затраты на прочие
+2022-09-08T11:42:26.782291+0700 INFO Затраты на None
+2022-09-08T11:42:30.572448+0700 INFO Затраты на алкоголь
+2022-09-08T11:42:35.997443+0700 INFO Выбор категории наличные
+2022-09-08T11:42:43.473356+0700 INFO Денег потрачено: 1500
+2022-09-08T13:11:03.705698+0700 INFO Бот запущен!
+2022-09-08T13:11:18.934078+0700 INFO Затраты на None
+2022-09-08T13:11:22.006105+0700 INFO Затраты на None
+2022-09-08T13:11:23.951947+0700 INFO Затраты на алкоголь
+2022-09-08T13:12:00.406718+0700 INFO Выбор категории нал. безнал
+2022-09-08T14:31:47.667683+0700 INFO Бот запущен!
+2022-09-08T14:32:02.310950+0700 INFO Бот запущен!
+2022-09-08T14:32:15.010401+0700 INFO Зашел в команду кошелек
+2022-09-08T14:32:15.011120+0700 INFO Вывод денег
+2022-09-08T14:32:15.014923+0700 ERROR OperationalError
+2022-09-08T14:32:23.611730+0700 INFO Затраты на химию
+2022-09-08T14:32:25.869555+0700 INFO Выбор категории нал. безнал
+2022-09-08T14:32:32.741390+0700 INFO Денег потрачено: 1500
+2022-09-08T14:32:32.742419+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (174925), thread 'MainThread' (140133017896768):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f7333271ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f73333a5150>
+    │        └ <function start_polling at 0x7f73333915a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f7333391fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f7333269c60>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f7334a76830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f7334a783a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f7334c3bd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f7332706770>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f7332706770>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f7332706770>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f7332706770>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698804, "message": {"message_id": 1263, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f73333a5150>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f7333468940>
+                 │    │                │      └ <Update {"update_id": 168698804, "message": {"message_id": 1263, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f73334d05e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f73333a5de0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f73333a5150>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f7332706740>}
+                     │           │        └ (<Message {"message_id": 1263, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function user_expenses at 0x7f73326f5cf0>
+                     └ Handler.HandlerObj(handler=<function user_expenses at 0x7f73326f5cf0>, spec=FullArgSpec(args=['message', 'state'], varargs=No...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/expenses.py", line 102, in user_expenses
+    card = message.text.split()[1]
+           │       └ <aiogram.types.fields.Field object at 0x7f73334281c0>
+           └ <Message {"message_id": 1263, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Van...
+
+IndexError: list index out of range
+2022-09-08T14:34:03.656615+0700 INFO Бот запущен!
+2022-09-08T14:34:11.849100+0700 INFO Затраты на химию
+2022-09-08T14:34:15.842713+0700 INFO Выбор категории нал. безнал
+2022-09-08T14:34:31.254137+0700 INFO Денег потрачено: 1500
+2022-09-08T14:34:52.502388+0700 INFO Денег потрачено: 300 600
+2022-09-08T14:34:52.508987+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['химию', 1, 0]
+2022-09-08T14:34:52.514534+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (175245), thread 'MainThread' (140394807453504):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 7024, in get
+    return clone.execute(database)[0]
+           │     │       └ None
+           │     └ <function BaseQuery.execute at 0x7fb0267ea710>
+           └ <peewee.ModelSelect object at 0x7fb02650d930>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 4389, in __getitem__
+    return self.row_cache[item]
+           │    │         └ 0
+           │    └ []
+           └ <peewee.ModelObjectCursorWrapper object at 0x7fb02650e950>
+
+IndexError: list index out of range
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/expenses.py", line 111, in user_expenses
+    expenses = Expenses.select().where(Expenses.name == expenses_name).get()
+               │        │              │        │       └ 'химию'
+               │        │              │        └ <peewee.FieldAccessor object at 0x7fb02650c640>
+               │        │              └ <Model: Expenses>
+               │        └ <classmethod(<function Model.select at 0x7fb0264ec430>)>
+               └ <Model: Expenses>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 7027, in get
+    raise self.model.DoesNotExist('%s instance matching query does '
+          │    │     └ <class 'database.expensesdb.ExpensesDoesNotExist'>
+          │    └ <Model: Expenses>
+          └ <peewee.ModelSelect object at 0x7fb02650f0d0>
+
+database.expensesdb.ExpensesDoesNotExist: <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['химию', 1, 0]
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7fb027079ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fb0271ad180>
+    │        └ <function start_polling at 0x7fb0271995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7fb027199fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7fb027071c90>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fb028876830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fb0288783a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fb028a3fd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7fb02650f430>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7fb02650f430>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7fb02650f430>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7fb02650f430>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698810, "message": {"message_id": 1270, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fb0271ad180>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fb027270970>
+                 │    │                │      └ <Update {"update_id": 168698810, "message": {"message_id": 1270, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7fb0272d85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fb0271ade10>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fb0271ad180>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7fb02650f730>}
+                     │           │        └ (<Message {"message_id": 1270, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function user_expenses at 0x7fb0264fdfc0>
+                     └ Handler.HandlerObj(handler=<function user_expenses at 0x7fb0264fdfc0>, spec=FullArgSpec(args=['message', 'state'], varargs=No...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/expenses.py", line 114, in user_expenses
+    expenses = Expenses.create(name=expenses_name).where(Expenses.name == expenses_name).get()
+               │        │           │                    │        │       └ 'химию'
+               │        │           │                    │        └ <peewee.FieldAccessor object at 0x7fb02650c640>
+               │        │           │                    └ <Model: Expenses>
+               │        │           └ 'химию'
+               │        └ <classmethod(<function Model.create at 0x7fb0264ec9d0>)>
+               └ <Model: Expenses>
+
+AttributeError: 'Expenses' object has no attribute 'where'
+2022-09-08T14:37:32.964842+0700 INFO Бот запущен!
+2022-09-08T14:37:43.104153+0700 INFO Затраты на алкоголь
+2022-09-08T14:37:44.639718+0700 INFO Выбор категории нал. безнал
+2022-09-08T14:37:52.432110+0700 INFO Денег потрачено: 150 650
+2022-09-08T14:37:52.440132+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['алкоголь', 1, 0]
+2022-09-08T14:37:52.465906+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (175741), thread 'MainThread' (140214702069568):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 49577767, 650, 150]
+    │      │       └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f8637fce840>
+
+sqlite3.IntegrityError: NOT NULL constraint failed: wallet_expenses.expenses_id
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f8637f79ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f86380ad000>
+    │        └ <function start_polling at 0x7f86380995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f8638099fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f8637f71b10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f8639692830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f86396943a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f863985bd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f863740e410>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f863740e410>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f863740e410>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f863740e410>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698815, "message": {"message_id": 1275, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f86380ad000>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f86381707f0>
+                 │    │                │      └ <Update {"update_id": 168698815, "message": {"message_id": 1275, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f86381d85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f86380adc90>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f86380ad000>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f863740f5e0>}
+                     │           │        └ (<Message {"message_id": 1275, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function user_expenses at 0x7f86373fdfc0>
+                     └ Handler.HandlerObj(handler=<function user_expenses at 0x7f86373fdfc0>, spec=FullArgSpec(args=['message', 'state'], varargs=No...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/expenses.py", line 119, in user_expenses
+    WalletExpenses.create(user_id=message.from_user.id, profit_name=expenses, money_card=card, money_cash=cash)
+    │              │              │       │                         │                    │                └ '150'
+    │              │              │       │                         │                    └ '650'
+    │              │              │       │                         └ <Expenses: 1>
+    │              │              │       └ <aiogram.types.fields.Field object at 0x7f8638587220>
+    │              │              └ <Message {"message_id": 1275, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Van...
+    │              └ <classmethod(<function Model.create at 0x7f86373f09d0>)>
+    └ <Model: WalletExpenses>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f86373f12d0>
+    └ <WalletExpenses: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 14, 37, 39, 649884), 'user_id': 49577767, 'money_card': '650', 'money_cash': '150'}
+         │    └ <classmethod(<function Model.insert at 0x7f86373f05e0>)>
+         └ <WalletExpenses: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f863740c040>
+           │      └ <peewee.ModelInsert object at 0x7f86373d3310>
+           └ <function BaseQuery.execute at 0x7f86376ee680>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f863740c040>
+           │    └ <function Insert._execute at 0x7f86376fb010>
+           └ <peewee.ModelInsert object at 0x7f86373d3310>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f863740c040>
+                 │       └ <peewee.ModelInsert object at 0x7f86373d3310>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f86373d3310>
+             │        └ <function Database.execute at 0x7f86373c9750>
+             └ <peewee.SqliteDatabase object at 0x7f863740c040>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f863a1f61a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 49577767, 650, 150]
+           │    │           └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f86373c96c0>
+           └ <peewee.SqliteDatabase object at 0x7f863740c040>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f86376eac50>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f86373e1b40>
+    │       │         │        │           └ ('NOT NULL constraint failed: wallet_expenses.expenses_id',)
+    │       │         │        └ IntegrityError('NOT NULL constraint failed: wallet_expenses.expenses_id')
+    │       │         └ <class 'peewee.IntegrityError'>
+    │       └ <class 'peewee.IntegrityError'>
+    └ <function reraise at 0x7f863766a4d0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f86373e1b40>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('NOT NULL constraint failed: wallet_expenses.expenses_id')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 49577767, 650, 150]
+    │      │       └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f8637fce840>
+
+peewee.IntegrityError: NOT NULL constraint failed: wallet_expenses.expenses_id
+2022-09-08T14:43:03.721306+0700 INFO Бот запущен!
+2022-09-08T14:43:09.259267+0700 INFO Затраты на алкоголь
+2022-09-08T14:43:10.787619+0700 INFO Выбор категории нал. безнал
+2022-09-08T14:43:15.089019+0700 INFO Денег потрачено: 150 650
+2022-09-08T14:43:15.094653+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (176538), thread 'MainThread' (140025911351104):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 49577767, 650, 150]
+    │      │       └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f5a432ca7c0>
+
+sqlite3.IntegrityError: NOT NULL constraint failed: wallet_expenses.expenses_id
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f5a43275ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f5a433a9000>
+    │        └ <function start_polling at 0x7f5a433955a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f5a43395fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f5a4326db10>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f5a449b6830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f5a449b83a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f5a44b7fd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f5a4270a410>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f5a4270a410>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f5a4270a410>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f5a4270a410>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698820, "message": {"message_id": 1280, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f5a433a9000>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f5a4346c7f0>
+                 │    │                │      └ <Update {"update_id": 168698820, "message": {"message_id": 1280, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f5a434d45e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f5a433a9c90>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f5a433a9000>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f5a4270b5e0>}
+                     │           │        └ (<Message {"message_id": 1280, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function user_expenses at 0x7f5a426f9fc0>
+                     └ Handler.HandlerObj(handler=<function user_expenses at 0x7f5a426f9fc0>, spec=FullArgSpec(args=['message', 'state'], varargs=No...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/expenses.py", line 119, in user_expenses
+    WalletExpenses.create(user_id=message.from_user.id, profit_name=expenses.id, money_card=card, money_cash=cash)
+    │              │              │       │                         │        │              │                └ '150'
+    │              │              │       │                         │        │              └ '650'
+    │              │              │       │                         │        └ <peewee.FieldAccessor object at 0x7f5a427086a0>
+    │              │              │       │                         └ <Expenses: 1>
+    │              │              │       └ <aiogram.types.fields.Field object at 0x7f5a43583220>
+    │              │              └ <Message {"message_id": 1280, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Van...
+    │              └ <classmethod(<function Model.create at 0x7f5a426ec9d0>)>
+    └ <Model: WalletExpenses>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f5a426ed2d0>
+    └ <WalletExpenses: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 14, 43, 6, 302300), 'user_id': 49577767, 'money_card': '650', 'money_cash': '150'}
+         │    └ <classmethod(<function Model.insert at 0x7f5a426ec5e0>)>
+         └ <WalletExpenses: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f5a42708040>
+           │      └ <peewee.ModelInsert object at 0x7f5a426cf310>
+           └ <function BaseQuery.execute at 0x7f5a429ea680>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f5a42708040>
+           │    └ <function Insert._execute at 0x7f5a429f7010>
+           └ <peewee.ModelInsert object at 0x7f5a426cf310>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f5a42708040>
+                 │       └ <peewee.ModelInsert object at 0x7f5a426cf310>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f5a426cf310>
+             │        └ <function Database.execute at 0x7f5a426c5750>
+             └ <peewee.SqliteDatabase object at 0x7f5a42708040>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f5a4551a1a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 49577767, 650, 150]
+           │    │           └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f5a426c56c0>
+           └ <peewee.SqliteDatabase object at 0x7f5a42708040>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f5a429e6c50>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f5a426dca40>
+    │       │         │        │           └ ('NOT NULL constraint failed: wallet_expenses.expenses_id',)
+    │       │         │        └ IntegrityError('NOT NULL constraint failed: wallet_expenses.expenses_id')
+    │       │         └ <class 'peewee.IntegrityError'>
+    │       └ <class 'peewee.IntegrityError'>
+    └ <function reraise at 0x7f5a429664d0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f5a426dca40>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('NOT NULL constraint failed: wallet_expenses.expenses_id')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 49577767, 650, 150]
+    │      │       └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f5a432ca7c0>
+
+peewee.IntegrityError: NOT NULL constraint failed: wallet_expenses.expenses_id
+2022-09-08T14:45:30.974216+0700 INFO Бот запущен!
+2022-09-08T14:45:44.111988+0700 INFO Бот запущен!
+2022-09-08T14:46:12.504118+0700 INFO Затраты на алкоголь
+2022-09-08T14:46:15.417865+0700 INFO Выбор категории картой
+2022-09-08T14:46:18.821604+0700 INFO Денег потрачено: 650
+2022-09-08T14:46:18.828674+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['алкоголь', 1, 0]
+2022-09-08T14:46:18.844637+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (176929), thread 'MainThread' (139797289649984):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 49577767, 650, 0]
+    │      │       └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f25083cbb40>
+
+sqlite3.IntegrityError: NOT NULL constraint failed: wallet_expenses.expenses_id
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f2508375ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f25084a90f0>
+    │        └ <function start_polling at 0x7f25084955a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f2508495fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f250836dc00>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f2509b0e830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f2509b103a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f2509cd3d90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f250780b1f0>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f250780b1f0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f250780b1f0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f250780b1f0>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698825, "message": {"message_id": 1285, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f25084a90f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f250856c8e0>
+                 │    │                │      └ <Update {"update_id": 168698825, "message": {"message_id": 1285, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f25085d45e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f25084a9d80>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f25084a90f0>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f250780a980>}
+                     │           │        └ (<Message {"message_id": 1285, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function user_expenses at 0x7f25077f9fc0>
+                     └ Handler.HandlerObj(handler=<function user_expenses at 0x7f25077f9fc0>, spec=FullArgSpec(args=['message', 'state'], varargs=No...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/expenses.py", line 119, in user_expenses
+    WalletExpenses.create(user_id=message.from_user.id, profit_name=expenses, money_card=card, money_cash=cash)
+    │              │              │       │                         │                    │                └ 0
+    │              │              │       │                         │                    └ '650'
+    │              │              │       │                         └ <Expenses: 1>
+    │              │              │       └ <aiogram.types.fields.Field object at 0x7f2508983310>
+    │              │              └ <Message {"message_id": 1285, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Van...
+    │              └ <classmethod(<function Model.create at 0x7f25077ec9d0>)>
+    └ <Model: WalletExpenses>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6484, in create
+    inst.save(force_insert=True)
+    │    └ <function Model.save at 0x7f25077ed2d0>
+    └ <WalletExpenses: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 6694, in save
+    pk = self.insert(**field_dict).execute()
+         │    │        └ {'start_date': datetime.datetime(2022, 9, 8, 14, 46, 9, 242171), 'user_id': 49577767, 'money_card': '650', 'money_cash': 0}
+         │    └ <classmethod(<function Model.insert at 0x7f25077ec5e0>)>
+         └ <WalletExpenses: None>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1927, in inner
+    return method(self, database, *args, **kwargs)
+           │      │     │          │       └ {}
+           │      │     │          └ ()
+           │      │     └ <peewee.SqliteDatabase object at 0x7f2507808190>
+           │      └ <peewee.ModelInsert object at 0x7f2507809d80>
+           └ <function BaseQuery.execute at 0x7f2507aea680>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 1998, in execute
+    return self._execute(database)
+           │    │        └ <peewee.SqliteDatabase object at 0x7f2507808190>
+           │    └ <function Insert._execute at 0x7f2507af7010>
+           └ <peewee.ModelInsert object at 0x7f2507809d80>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2798, in _execute
+    return super(Insert, self)._execute(database)
+                 │       │              └ <peewee.SqliteDatabase object at 0x7f2507808190>
+                 │       └ <peewee.ModelInsert object at 0x7f2507809d80>
+                 └ <class 'peewee.Insert'>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2511, in _execute
+    cursor = database.execute(self)
+             │        │       └ <peewee.ModelInsert object at 0x7f2507809d80>
+             │        └ <function Database.execute at 0x7f25077c5750>
+             └ <peewee.SqliteDatabase object at 0x7f2507808190>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3210, in execute
+    return self.execute_sql(sql, params, commit=commit)
+           │    │           │    │              └ <object object at 0x7f250a6761a0>
+           │    │           │    └ [datetime.date(2022, 9, 8), 49577767, 650, 0]
+           │    │           └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+           │    └ <function Database.execute_sql at 0x7f25077c56c0>
+           └ <peewee.SqliteDatabase object at 0x7f2507808190>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3194, in execute_sql
+    with __exception_wrapper__:
+         └ <peewee.ExceptionWrapper object at 0x7f2507ae6d40>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 2970, in __exit__
+    reraise(new_type, new_type(exc_value, *exc_args), traceback)
+    │       │         │        │           │          └ <traceback object at 0x7f2507803640>
+    │       │         │        │           └ ('NOT NULL constraint failed: wallet_expenses.expenses_id',)
+    │       │         │        └ IntegrityError('NOT NULL constraint failed: wallet_expenses.expenses_id')
+    │       │         └ <class 'peewee.IntegrityError'>
+    │       └ <class 'peewee.IntegrityError'>
+    └ <function reraise at 0x7f2507a664d0>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 191, in reraise
+    raise value.with_traceback(tb)
+          │     │              └ <traceback object at 0x7f2507803640>
+          │     └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('NOT NULL constraint failed: wallet_expenses.expenses_id')
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 3197, in execute_sql
+    cursor.execute(sql, params or ())
+    │      │       │    └ [datetime.date(2022, 9, 8), 49577767, 650, 0]
+    │      │       └ 'INSERT INTO "wallet_expenses" ("start_date", "user_id", "money_card", "money_cash") VALUES (?, ?, ?, ?)'
+    │      └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7f25083cbb40>
+
+peewee.IntegrityError: NOT NULL constraint failed: wallet_expenses.expenses_id
+2022-09-08T14:54:39.845498+0700 INFO Бот запущен!
+2022-09-08T14:54:49.471537+0700 INFO Бот запущен!
+2022-09-08T14:54:58.153912+0700 INFO Затраты на алкоголь
+2022-09-08T14:54:59.917482+0700 INFO Выбор категории наличными
+2022-09-08T14:55:03.408451+0700 INFO Денег потрачено: 150
+2022-09-08T14:55:03.416163+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['алкоголь', 1, 0]
+2022-09-08T14:57:01.332459+0700 INFO Затраты на алкоголь
+2022-09-08T14:57:03.719972+0700 INFO Выбор категории наличными
+2022-09-08T14:57:07.611053+0700 INFO Денег потрачено: 650
+2022-09-08T14:58:41.717879+0700 INFO Бот запущен!
+2022-09-08T14:58:48.333893+0700 INFO Затраты на кредит
+2022-09-08T14:58:51.144743+0700 INFO Выбор категории нал. безнал
+2022-09-08T14:58:58.923580+0700 INFO Денег потрачено: 650 450
+2022-09-08T14:58:58.931488+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['кредит', 1, 0]
+2022-09-08T15:00:13.062392+0700 INFO Бот запущен!
+2022-09-08T15:00:19.409223+0700 INFO Затраты на ЖКХ
+2022-09-08T15:00:22.276743+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:00:32.926051+0700 INFO Денег потрачено: 3500 1500
+2022-09-08T15:00:32.928499+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['ЖКХ', 1, 0]
+2022-09-08T15:00:32.942868+0700 ERROR OperationalError
+2022-09-08T15:01:05.285758+0700 INFO Зашел добывать прибыль
+2022-09-08T15:01:07.845760+0700 INFO Добавить прибыль: подработка
+2022-09-08T15:01:09.790264+0700 INFO Пополнить: нал безнал
+2022-09-08T15:01:19.518386+0700 INFO Сумма к добавлению: 1500 3500
+2022-09-08T15:01:19.524572+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T15:01:19.550980+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (179065), thread 'MainThread' (139828353062720):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 7024, in get
+    return clone.execute(database)[0]
+           │     │       └ None
+           │     └ <function BaseQuery.execute at 0x7f2c432ee710>
+           └ <peewee.ModelSelect object at 0x7f2c42fce470>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 4389, in __getitem__
+    return self.row_cache[item]
+           │    │         └ 0
+           │    └ []
+           └ <peewee.ModelObjectCursorWrapper object at 0x7f2c42fce2f0>
+
+IndexError: list index out of range
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f2c43b79ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f2c43cad180>
+    │        └ <function start_polling at 0x7f2c43c995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f2c43c99fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f2c43b71c90>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f2c45372830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f2c453743a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f2c4553bd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f2c4300d510>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f2c4300d510>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f2c4300d510>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f2c4300d510>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698850, "message": {"message_id": 1311, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f2c43cad180>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f2c43d70970>
+                 │    │                │      └ <Update {"update_id": 168698850, "message": {"message_id": 1311, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f2c43dd85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f2c43cade10>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f2c43cad180>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f2c4300e7d0>}
+                     │           │        └ (<Message {"message_id": 1311, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f2c42ffd480>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f2c42ffd480>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 124, in get_profit
+    await wallet_money(message, state)
+          │            │        └ <aiogram.dispatcher.storage.FSMContext object at 0x7f2c4300e7d0>
+          │            └ <Message {"message_id": 1311, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Van...
+          └ <function wallet_money at 0x7f2c43bd63b0>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 25, in wallet_money
+    money = WalletDB.select().where(WalletDB.id == 1).get()
+            │        │              │        └ <peewee.FieldAccessor object at 0x7f2c432622f0>
+            │        │              └ <Model: WalletDB>
+            │        └ <classmethod(<function Model.select at 0x7f2c42ff0430>)>
+            └ <Model: WalletDB>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/peewee.py", line 7027, in get
+    raise self.model.DoesNotExist('%s instance matching query does '
+          │    │     └ <class 'database.walletdb.WalletDBDoesNotExist'>
+          │    └ <Model: WalletDB>
+          └ <peewee.ModelSelect object at 0x7f2c42fcd420>
+
+database.walletdb.WalletDBDoesNotExist: <Model: WalletDB> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."money_card", "t1"."money_cash", "t1"."money_credit" FROM "wallet" AS "t1" WHERE ("t1"."id" = ?) LIMIT ? OFFSET ?
+Params: [1, 1, 0]
+2022-09-08T15:08:47.421561+0700 INFO Бот запущен!
+2022-09-08T15:09:29.713455+0700 INFO Бот запущен!
+2022-09-08T15:09:40.261976+0700 INFO Зашел добывать прибыль
+2022-09-08T15:09:41.906346+0700 INFO Добавить прибыль: подработка
+2022-09-08T15:09:43.743017+0700 INFO Пополнить: наличные
+2022-09-08T15:09:50.969530+0700 INFO Сумма к добавлению: 6500
+2022-09-08T15:09:51.017006+0700 ERROR An error has been caught in function 'notify', process 'MainProcess' (180405), thread 'MainThread' (140133520271168):
+Traceback (most recent call last):
+
+  File "/home/Frantishek/PycharmProjects/Accountant/main.py", line 39, in <module>
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=True)
+    │        │             │              └ <function on_startup at 0x7f7351279ea0>
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f73513ad120>
+    │        └ <function start_polling at 0x7f73513995a0>
+    └ <module 'aiogram.utils.executor' from '/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 45, in start_polling
+    executor.start_polling(
+    │        └ <function Executor.start_polling at 0x7f7351399fc0>
+    └ <aiogram.utils.executor.Executor object at 0x7f7351271c30>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f7352996830>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f73529983a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib64/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f7352b5fd90>
+    └ <Handle <TaskStepMethWrapper object at 0x7f73506ced10>()>
+  File "/usr/lib64/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x7f73506ced10>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x7f73506ced10>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x7f73506ced10>()>
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 168698855, "message": {"message_id": 1316, "from": {"id": 49577767, "is_bot": false, "first_name": "Iv...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f73513ad120>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f7351470910>
+                 │    │                │      └ <Update {"update_id": 168698855, "message": {"message_id": 1316, "from": {"id": 49577767, "is_bot": false, "first_name": "Iva...
+                 │    │                └ <function Handler.notify at 0x7f73514d85e0>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f73513addb0>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f73513ad120>
+> File "/home/Frantishek/PycharmProjects/Accountant/venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {'state': <aiogram.dispatcher.storage.FSMContext object at 0x7f73506ce6b0>}
+                     │           │        └ (<Message {"message_id": 1316, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Va...
+                     │           └ <function get_profit at 0x7f73506fd240>
+                     └ Handler.HandlerObj(handler=<function get_profit at 0x7f73506fd240>, spec=FullArgSpec(args=['message', 'state'], varargs=None,...
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 127, in get_profit
+    await wallet_money(message, state)
+          │            │        └ <aiogram.dispatcher.storage.FSMContext object at 0x7f73506ce6b0>
+          │            └ <Message {"message_id": 1316, "from": {"id": 49577767, "is_bot": false, "first_name": "Ivan Vanchugov", "username": "Ivan_Van...
+          └ <function wallet_money at 0x7f73512d63b0>
+
+  File "/home/Frantishek/PycharmProjects/Accountant/handlers/custom/profit.py", line 34, in wallet_money
+    money_profit = money_new_card + money_new_cash
+                   │                └ 6500
+                   └ None
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+2022-09-08T15:10:38.732009+0700 INFO Бот запущен!
+2022-09-08T15:10:47.980040+0700 INFO Зашел добывать прибыль
+2022-09-08T15:10:50.151520+0700 INFO Добавить прибыль: заработная платы
+2022-09-08T15:10:51.942547+0700 INFO Пополнить: карту
+2022-09-08T15:10:57.575162+0700 INFO Сумма к добавлению: 67200
+2022-09-08T15:10:57.583099+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['заработная платы', 1, 0]
+2022-09-08T15:10:57.607930+0700 INFO WalletDBDoesNotExist, <Model: WalletDB> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."money_card", "t1"."money_cash", "t1"."money_credit" FROM "wallet" AS "t1" WHERE ("t1"."id" = ?) LIMIT ? OFFSET ?
+Params: [1, 1, 0]
+2022-09-08T15:11:09.458605+0700 INFO Затраты на АЗС
+2022-09-08T15:11:15.391947+0700 INFO Выбор категории картой
+2022-09-08T15:11:21.638961+0700 INFO Денег потрачено: 1100
+2022-09-08T15:11:21.646387+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['АЗС', 1, 0]
+2022-09-08T15:11:28.602768+0700 INFO Зашел добывать прибыль
+2022-09-08T15:11:30.773010+0700 INFO Добавить прибыль: подработка
+2022-09-08T15:11:34.439205+0700 INFO Пополнить: нал безнал
+2022-09-08T15:11:42.221386+0700 INFO Сумма к добавлению: 1500 8500
+2022-09-08T15:11:42.223796+0700 INFO ProfitDoesNotExist, <Model: Profit> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "salary" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['подработка', 1, 0]
+2022-09-08T15:11:48.877740+0700 INFO Зашел в команду кошелек
+2022-09-08T15:11:48.878236+0700 INFO Вывод денег
+2022-09-08T15:12:36.596509+0700 INFO Затраты на машина
+2022-09-08T15:12:40.083060+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:12:46.324215+0700 INFO Денег потрачено: 95000
+2022-09-08T15:13:07.214282+0700 INFO Денег потрачено: 50550 40000
+2022-09-08T15:13:07.216087+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['машина', 1, 0]
+2022-09-08T15:13:34.863728+0700 INFO Зашел в команду кошелек
+2022-09-08T15:13:34.864475+0700 INFO Вывод денег
+2022-09-08T15:16:44.816509+0700 INFO Бот запущен!
+2022-09-08T15:16:52.703383+0700 INFO Затраты на машина
+2022-09-08T15:16:54.545353+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:17:02.844518+0700 INFO Денег потрачено: 50500 40000
+2022-09-08T15:19:28.351641+0700 INFO Бот запущен!
+2022-09-08T15:19:36.134534+0700 INFO Затраты на машина
+2022-09-08T15:19:37.977641+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:19:50.675580+0700 INFO Денег потрачено: 45000 50000
+2022-09-08T15:20:52.749184+0700 INFO Бот запущен!
+2022-09-08T15:21:03.483907+0700 INFO Затраты на машина
+2022-09-08T15:21:05.223835+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:21:11.470782+0700 INFO Денег потрачено: 45000 50000
+2022-09-08T15:23:21.007539+0700 INFO Бот запущен!
+2022-09-08T15:23:30.161980+0700 INFO Затраты на машина
+2022-09-08T15:23:32.067916+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:23:39.655710+0700 INFO Денег потрачено: 45000 5000
+2022-09-08T15:23:51.217071+0700 INFO Зашел в команду кошелек
+2022-09-08T15:23:51.217620+0700 INFO Вывод денег
+2022-09-08T15:27:58.327070+0700 INFO Бот запущен!
+2022-09-08T15:28:09.575229+0700 INFO Затраты на машина
+2022-09-08T15:28:11.017464+0700 INFO Выбор категории нал. безнал
+2022-09-08T15:28:38.248545+0700 INFO Денег потрачено: 1500 45000
+2022-09-08T15:28:55.554658+0700 INFO Затраты на кредит
+2022-09-08T15:28:58.727646+0700 INFO Выбор категории картой
+2022-09-08T15:29:06.306536+0700 INFO Денег потрачено: 35000
+2022-09-08T15:29:06.309651+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['кредит', 1, 0]
+2022-09-08T15:30:01.294874+0700 INFO Зашел в команду кошелек
+2022-09-08T15:30:01.295108+0700 INFO Вывод денег
+2022-09-08T15:30:20.461097+0700 INFO Зашел в команду кошелек
+2022-09-08T15:30:20.461578+0700 INFO Вывод денег
+2022-09-08T15:32:46.672539+0700 INFO Бот запущен!
+2022-09-08T15:32:54.353924+0700 INFO Зашел добывать прибыль
+2022-09-08T15:32:55.787437+0700 INFO Добавить прибыль: подработка
+2022-09-08T15:32:57.630759+0700 INFO Пополнить: нал безнал
+2022-09-08T15:33:03.570045+0700 INFO Сумма к добавлению: 2000 25000
+2022-09-08T15:33:25.483355+0700 INFO Зашел в команду кошелек
+2022-09-08T15:33:25.483677+0700 INFO Вывод денег
+2022-09-08T15:33:48.319700+0700 INFO Затраты на интернет магазин
+2022-09-08T15:33:54.566016+0700 INFO Выбор категории картой
+2022-09-08T15:33:59.583116+0700 INFO Денег потрачено: 40000
+2022-09-08T15:33:59.585513+0700 INFO ExpensesDoesNotExist, <Model: Expenses> instance matching query does not exist:
+SQL: SELECT "t1"."id", "t1"."name" FROM "expenses" AS "t1" WHERE ("t1"."name" = ?) LIMIT ? OFFSET ?
+Params: ['интернет магазин', 1, 0]
+2022-09-08T15:34:57.570056+0700 INFO Бот запущен!
+2022-09-08T15:37:53.188621+0700 INFO Бот запущен!
+2022-09-08T15:37:59.612607+0700 INFO Зашел в команду кошелек
+2022-09-08T15:37:59.613621+0700 INFO Вывод денег
+2022-09-08T15:38:09.447074+0700 INFO Зашел добывать прибыль
+2022-09-08T15:38:11.695583+0700 INFO Добавить прибыль: заработная платы
+2022-09-08T15:38:13.232011+0700 INFO Пополнить: карту
+2022-09-08T15:38:17.638967+0700 INFO Сумма к добавлению: 67000
+2022-09-08T15:38:44.873954+0700 INFO Зашел в команду кошелек
+2022-09-08T15:38:44.874571+0700 INFO Вывод денег

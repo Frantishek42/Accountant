@@ -4,10 +4,10 @@ db = SqliteDatabase('database/wallet.db')
 
 
 class WalletDB(Model):
-    id = IntegerField(PrimaryKeyField)
-    money = IntegerField()
+    money_card = IntegerField()
+    money_cash = IntegerField()
+    money_credit = IntegerField(default=0)
 
     class Meta:
         database = db
-        order_by = 'user_id'
         db_table = 'wallet'

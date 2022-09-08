@@ -1,68 +1,32 @@
+from datetime import datetime
 from peewee import *
 
 db = SqliteDatabase('database/expenses.db')
 
 
 class BasesModel(Model):
-    user_id = IntegerField()
-    start_date = DateField()
-    money = IntegerField()
 
     class Meta:
         database = db
-        order_by = 'user_id'
 
 
-class Products(BasesModel):
-
-    class Meta:
-        db_table = 'products'
-
-
-class Alcohol(BasesModel):
-
-    class Meta:
-        db_table = 'alcohol'
-
-
-class Chemistry(BasesModel):
-
-    class Meta:
-        db_table = 'chemistry'
-
-
-class Communal(BasesModel):
-
-    class Meta:
-        db_table = 'communal'
-
-
-class Credit(BasesModel):
-
-    class Meta:
-        db_table = 'credit'
-
-
-class GasStation(BasesModel):
-
-    class Meta:
-        db_table = 'gas_station'
-
-
-class Car(BasesModel):
-
-    class Meta:
-        db_table = 'car'
-
-
-class OnlineStore(BasesModel):
-
-    class Meta:
-        db_table = 'online_store'
-
-
-class Other(BasesModel):
+class Expenses(BasesModel):
     name = TextField()
 
     class Meta:
-        db_table = 'other'
+        db_table = 'expenses'
+        order_by = 'name'
+
+
+class WalletExpenses(BasesModel):
+    start_date = DateField(default=datetime.now())
+    expenses_id = ForeignKeyField(Expenses, to_field='id', related_name='fk_exp_wall', on_delete='cascade')
+    user_id = IntegerField()
+    money_card = IntegerField()
+    money_cash = IntegerField()
+
+    class Meta:
+        db_table = 'wallet_expenses'
+
+
+

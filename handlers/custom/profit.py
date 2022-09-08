@@ -1,39 +1,62 @@
 from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from aiogram.types import Message, CallbackQuery
-from filters.extension_filters import Profit, Number
+from filters.extension_filters import ProfitFilter, Number
 import keyboards.inline as nav
 from states.state_user import FSMUser
 from database.profitdb import *
 from database.walletdb import WalletDB
-from datetime import datetime
 from logger.log import logger
 
+profile_user = {'salary': 'заработная платы', 'part_time_job': 'подработка', 'sale': 'продажа'}
 
-async def wallet_money(message: Message) -> None:
+
+async def wallet_money(message: Message, state: FSMContext) -> None:
     """
     Функция для создания таблицы кошелек и прибавляет сумму денег
 
+    :param state:
     :param message:
     :return:
     """
-    WalletDB.create_table()
-    money_ = WalletDB.select()
-    if money_:
-        money_new = 0
-        for money in money_:
-            money_new = money.money
-        money_sum = money_new + int(message.text)
-        wall = WalletDB.update(money=money_sum).where(WalletDB.id == 1)
-        wall.execute()
-        await bot.send_message(message.chat.id, f'Ваш кошелек пополнился на: <b>{message.text}</b> ₱'
-                               f'\nДенег в кошелке: <b>{money_sum}</b> ₱')
+    async with state.proxy() as data:
+        profit_money = data.get('profit_money')
+
+    money_new_card = 0
+    money_new_cash = 0
+    money_credit = 0
+    if profit_money == 'card':
+        money_new_card = int(message.text)
+    elif profit_money == 'cash':
+        money_new_cash = int(message.text)
     else:
-        WalletDB.create(id=1, money=message.text)
-        await bot.send_message(message.chat.id, f'Ваш кошелек пополнился на: <b>{message.text}</b> ₱')
+        money_new_card = int(message.text.split()[1])
+        money_new_cash = int(message.text.split()[0])
+    money_profit = money_new_card + money_new_cash
+
+    WalletDB.create_table()
+    try:
+        money = WalletDB.select().where(WalletDB.id == 1).get()
+        money_new_card += money.money_card
+        money_new_cash += money.money_cash
+        money_credit = money.money_credit
+
+        wall = WalletDB.update(money_card=money_new_card, money_cash=money_new_cash).where(WalletDB.id == 1)
+        wall.execute()
+
+    except DoesNotExist as exc:
+        logger.info(f'{exc.__class__.__name__}, {exc}')
+        WalletDB.create(money_card=money_new_card, money_cash=money_new_cash)
+    money_sum = money_new_card + money_new_cash
+    await bot.send_message(message.chat.id, f'Ваш баланс пополнился на: <b>{money_profit}</b> ₱'
+                                            f'\nБаланс:'
+                                            f'\nНа карте:  <b>{money_new_card}</b> ₱'
+                                            f'\nНаличные: <b>{money_new_cash}</b> ₱'
+                                            f'\nЗадолженность по кредитке: <b>{money_credit}</b> ₱'
+                                            f'\nОбщая сумма: <b>{money_sum - money_credit}</b> ₱')
 
 
-@dp.message_handler(Profit(), state='*')
+@dp.message_handler(ProfitFilter(), state='*')
 async def get_profit(message: Message) -> None:
     logger.info('Зашел добывать прибыль')
     await FSMUser.profit.set()
@@ -43,25 +66,66 @@ async def get_profit(message: Message) -> None:
 @dp.callback_query_handler(state=FSMUser.profit)
 async def call_profit(call: CallbackQuery, state: FSMContext) -> None:
 
-    profile_user = {'salary': 'заработной платы', 'part_time_job': 'подработки', 'sale': 'с продажи'}
     logger.info(f'Добавить прибыль: {profile_user.get(call.data)}')
-    await FSMUser.user_profit.set()
+    await FSMUser.profit_money.set()
     async with state.proxy() as data:
         data['profit'] = call.data
 
     if call.data in profile_user.keys():
         await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                    text=f'Введите сумму {profile_user.get(call.data)}')
+                                    text=f'Вы выбрали {profile_user.get(call.data)}'
+                                         f'\nТеперь выберите категорию',
+                                    reply_markup=nav.marcup_money)
+
+
+@dp.callback_query_handler(state=FSMUser.profit_money)
+async def call_profit_money(call: CallbackQuery, state: FSMContext) -> None:
+
+    profile_money = {'card': 'карту', 'cash': 'наличные', 'card_cash': 'нал безнал'}
+    profit = profile_money.get(call.data)
+    logger.info(f'Пополнить: {profit}')
+    await FSMUser.user_profit.set()
+    async with state.proxy() as data:
+        data['profit_money'] = call.data
+
+    if call.data in profile_money.keys():
+        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                    text=f'Пополнить {profit}')
 
 
 @dp.message_handler(Number(), state=FSMUser.user_profit)
-async def profit(message: Message, state: FSMContext) -> None:
+@logger.catch()
+async def get_profit(message: Message, state: FSMContext) -> None:
     logger.info(f'Сумма к добавлению: {message.text}')
-    profit_dict = {'salary': Salary, 'part_time_job': PartTimeJob, 'sale': Sale}
+
     async with state.proxy() as data:
         profit_user = data.get('profit')
-    if profit_user in profit_dict.keys():
-        profit_dict.get(profit_user).create_table()
-        profit_dict.get(profit_user).create(user_id=message.from_user.id, start_date=datetime.now(), money=message.text)
-    await wallet_money(message)
+        profit_money = data.get('profit_money')
+
+    card = 0
+    cash = 0
+    if profit_money in 'card':
+        card = message.text
+    elif profit_money in 'cash':
+        cash = message.text
+    elif profit_money in 'card_cash' and len(message.text.split()) == 2:
+        card = message.text.split()[1]
+        cash = message.text.split()[0]
+    else:
+        await message.answer('Данные ведены неверно. Попробуйте еще раз.\nВведите через пробел нал безнал')
+        return
+
+    Profit.create_table()
+    profit = None
+    try:
+        profit = Profit.select().where(Profit.name == profile_user.get(profit_user)).get()
+    except DoesNotExist as exc:
+        logger.info(f'{exc.__class__.__name__}, {exc}')
+        profit = Profit.create(name=profile_user.get(profit_user)).select(). \
+            where(Profit.name == profile_user.get(profit_user)).get()
+    except OperationalError as exc:
+        logger.error(f'{exc.__class__.__name__}, {exc}')
+    WalletProfit.create_table()
+    WalletProfit.create(user_id=message.from_user.id, profit_name=profit, money_card=card, money_cash=cash)
+    await wallet_money(message, state)
     await state.finish()
