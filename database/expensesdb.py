@@ -11,6 +11,12 @@ class BasesModel(Model):
 
 
 class Expenses(BasesModel):
+    """
+    Класс для создания таблицы Затрат
+
+    :argument
+        name: str = Название затрат
+    """
     name = TextField()
 
     class Meta:
