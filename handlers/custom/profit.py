@@ -70,7 +70,12 @@ async def get_profit(message: Message) -> None:
 
 @dp.callback_query_handler(state=FSMUser.profit)
 async def call_profit(call: CallbackQuery, state: FSMContext) -> None:
-
+    """
+    Функция для отлавливания кнопок marcup_profit
+    :param call:
+    :param state:
+    :return:
+    """
     logger.info(f'Добавить прибыль: {profile_user.get(call.data)}')
     await FSMUser.profit_money.set()
     async with state.proxy() as data:
@@ -83,7 +88,12 @@ async def call_profit(call: CallbackQuery, state: FSMContext) -> None:
 
 @dp.callback_query_handler(state=FSMUser.profit_money)
 async def call_profit_money(call: CallbackQuery, state: FSMContext) -> None:
-
+    """
+    Функция для отлавливания кнопок marcup_money
+    :param call:
+    :param state:
+    :return:
+    """
     profile_money = {'card': 'карту', 'cash': 'наличные', 'card_cash': 'нал безнал'}
     profit = profile_money.get(call.data)
     logger.info(f'Пополнить: {profit}')
@@ -99,6 +109,12 @@ async def call_profit_money(call: CallbackQuery, state: FSMContext) -> None:
 @dp.message_handler(Number(), state=FSMUser.user_profit)
 @logger.catch()
 async def get_profit(message: Message, state: FSMContext) -> None:
+    """
+    Функция для создании таблицы (Profit, WalletProfit)  и добавления в нее информации
+    :param message:
+    :param state:
+    :return:
+    """
     logger.info(f'Сумма к добавлению: {message.text}')
 
     async with state.proxy() as data:

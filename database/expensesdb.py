@@ -27,6 +27,7 @@ class WalletExpenses(BasesModel):
 
     class Meta:
         db_table = 'wallet_expenses'
+        order_by = 'start_date'
 
 
 

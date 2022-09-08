@@ -9,7 +9,6 @@ class BasesModel(Model):
 
     class Meta:
         database = db
-        order_by = 'user_id'
 
 
 class Profit(BasesModel):
@@ -28,3 +27,4 @@ class WalletProfit(BasesModel):
 
     class Meta:
         db_table = 'wallet_profit'
+        order_by = 'start_date'
