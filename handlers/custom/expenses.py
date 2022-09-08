@@ -19,7 +19,7 @@ expenses_user = {
 @dp.message_handler(ExpensesFilter(), state='*')
 async def get_expenses(message: Message):
     """
-    Функция для отлавливания команды затраты
+    Функция для приема команды Затраты
     :param message: Message
     :return:
     """
@@ -29,6 +29,12 @@ async def get_expenses(message: Message):
 
 @dp.callback_query_handler(state=FSMUser.expenses)
 async def call_expenses(call: CallbackQuery, state: FSMContext) -> None:
+    """
+    Функция отлавливает кнопки marcup_expenses
+    :param call:
+    :param state:
+    :return:
+    """
     logger.info(f'Затраты на {expenses_user.get(call.data)}')
     answer = call.data
     async with state.proxy() as data:
@@ -38,18 +44,24 @@ async def call_expenses(call: CallbackQuery, state: FSMContext) -> None:
         await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                     text='Прочие затраты:', reply_markup=nav.marcup_other)
         return
+
+    await FSMUser.expenses_money.set()
     prefix = 'На'
-    if call.data in expenses_user.keys():
-        await FSMUser.expenses_money.set()
-        if call.data == 'online_store':
-            prefix = 'В'
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                    text=f'{prefix} {expenses_user.get(call.data)}',
-                                    reply_markup=nav.marcup_money)
+    if call.data == 'online_store':
+        prefix = 'В'
+    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                text=f'{prefix} {expenses_user.get(call.data)}')
+    await call.message.answer('Выберите категорию', reply_markup=nav.marcup_money)
 
 
 @dp.callback_query_handler(state=FSMUser.expenses_other)
 async def other(call: CallbackQuery, state: FSMContext) -> None:
+    """
+    Функция отлавливает кнопки marcup_other
+    :param call:
+    :param state:
+    :return:
+    """
     logger.info(f'Затраты на {expenses_user.get(call.data)}')
     if call.data == 'back':
         await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
@@ -57,24 +69,24 @@ async def other(call: CallbackQuery, state: FSMContext) -> None:
         await FSMUser.expenses.set()
         return
 
-    if call.data in expenses_user.keys():
-        async with state.proxy() as data:
-            data['expenses'] = expenses_user.get(call.data)
-        await FSMUser.expenses_money.set()
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                    text=f'На {expenses_user.get(call.data)}',
-                                    reply_markup=nav.marcup_money)
+    async with state.proxy() as data:
+        data['expenses'] = expenses_user.get(call.data)
+    await FSMUser.expenses_money.set()
+    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                text=f'На {expenses_user.get(call.data)}')
+    await call.message.answer('Выберите категорию', reply_markup=nav.marcup_money)
 
 
 @dp.callback_query_handler(state=FSMUser.expenses_money)
 async def expenses_money(call: CallbackQuery, state: FSMContext) -> None:
+    """
+    Функция отлавливает кнопки marcup_money
+    :param call:
+    :param state:
+    :return:
+    """
     exp_money = {'card': 'картой', 'cash': 'наличными', 'card_cash': 'нал. безнал'}
     logger.info(f'Выбор категории {exp_money.get(call.data)}')
-    if call.data == 'back':
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                    text='Что добавить?', reply_markup=nav.marcup_expenses)
-        await FSMUser.expenses.set()
-        return
 
     await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                 text=f'Введите сколько потратили {exp_money.get(call.data)}')
@@ -86,6 +98,12 @@ async def expenses_money(call: CallbackQuery, state: FSMContext) -> None:
 @dp.message_handler(Number(), state=FSMUser.user_expenses)
 @logger.catch()
 async def user_expenses(message: Message, state: FSMContext) -> None:
+    """
+    Функция для создания таблицы затрат
+    :param message:
+    :param state:
+    :return:
+    """
     logger.info(f'Денег потрачено: {message.text}')
 
     async with state.proxy() as data:
@@ -124,7 +142,7 @@ async def user_expenses(message: Message, state: FSMContext) -> None:
 @logger.catch()
 async def wallet_money(message: Message, state: FSMContext) -> None:
     """
-    Функция для создания таблицы кошелек и
+    Функция для обновления таблицы кошелек и вывод пользователю информация о балансе
 
     :param state:
     :param message:
@@ -133,6 +151,7 @@ async def wallet_money(message: Message, state: FSMContext) -> None:
     money_expenses = message.text
     async with state.proxy() as data:
         exp_money = data.get('expenses_money')
+        exp_credit = data.get('expenses')
 
     card = 0
     cash = 0
@@ -162,19 +181,23 @@ async def wallet_money(message: Message, state: FSMContext) -> None:
             credit = money_card + money_cash - card_cash
             money_card = 0
             money_cash = 0
-            print(card, cash, card_cash)
-            print(credit)
             wall = WalletDB.update(money_card=0, money_cash=0, money_credit=abs(credit)).where(WalletDB.id == 1)
             wall.execute()
             await message.answer(f'Вы зашли за лимит. Задолженность составляет: <b>{abs(credit)}</b>')
-        wall = WalletDB.update(money_card=money_card, money_cash=money_cash).where(WalletDB.id == 1)
+        if exp_credit == 'кредит' and credit == card_cash:
+            logger.info(f'Кредит погашен')
+            credit = 0
+        wall = WalletDB.update(money_card=money_card, money_cash=money_cash,
+                               money_credit=credit).where(WalletDB.id == 1)
         wall.execute()
-        await bot.send_message(message.chat.id, f'Ваш кошелек похудел на <b>{card_cash}</b>'
-                                                f'\nДенег в кошелке осталось: '
-                                                f'\nНа карте: <b>{money_card}</b> ₱'
-                                                f'\nНаличные: <b>{money_cash}</b> ₱'
-                                                f'\nЗадолженность по кредитке: <b>{abs(credit)}</b> ₱'
-                                                f'\nОбщая: <b>{money_card + money_cash - credit}</b> ₱')
+        await message.answer(
+            f'Ваш кошелек похудел на <b>{card_cash}</b>'
+            f'\nДенег в кошелке осталось: '
+            f'\nНа карте: <b>{money_card}</b> ₱'
+            f'\nНаличные: <b>{money_cash}</b> ₱'
+            f'\nЗадолженность по кредитке: <b>{abs(credit)}</b> ₱'
+            f'\nОбщая: <b>{money_card + money_cash - credit}</b> ₱'
+        )
     except OperationalError as exp:
         logger.error(exp.__class__.__name__, exp)
         await message.answer('База данных кошелек не создана или удалена')

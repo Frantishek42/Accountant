@@ -8,11 +8,21 @@ from logger.log import logger
 
 @dp.message_handler(WalletFilter(), state='*')
 async def get_wallet(message: Message):
+    """
+    Функция для приема команды Кошелек
+    :param message: Message
+    :return:
+    """
     logger.info('Зашел в команду кошелек')
     await wallet_user(message)
 
 
 async def wallet_user(message: Message) -> None:
+    """
+    Функция для вывода информации кошелька
+    :param message:
+    :return:
+    """
     logger.info('Вывод денег')
     try:
         money = WalletDB.select().where(WalletDB.id == 1).get()

@@ -3,9 +3,9 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 # <--- InlineKeyboardButton для menu profit --->
 
 marcup_profit = InlineKeyboardMarkup(row_width=2)
-salary = InlineKeyboardButton(text='Зарплату', callback_data='salary')
-part_time_job = InlineKeyboardButton(text='Подработку', callback_data='part_time_job')
-sale = InlineKeyboardButton(text='Продажу', callback_data='sale')
+salary = InlineKeyboardButton(text='🛠 Зарплату', callback_data='salary')
+part_time_job = InlineKeyboardButton(text='🪛 Подработку', callback_data='part_time_job')
+sale = InlineKeyboardButton(text='🧮 Продажу', callback_data='sale')
 marcup_profit.add(salary, part_time_job, sale)
 
 

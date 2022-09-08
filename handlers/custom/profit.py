@@ -58,6 +58,11 @@ async def wallet_money(message: Message, state: FSMContext) -> None:
 
 @dp.message_handler(ProfitFilter(), state='*')
 async def get_profit(message: Message) -> None:
+    """
+    Функция для приема команды Прибыль
+    :param message:
+    :return:
+    """
     logger.info('Зашел добывать прибыль')
     await FSMUser.profit.set()
     await message.answer('Что добавить?', reply_markup=nav.marcup_profit)
@@ -70,12 +75,10 @@ async def call_profit(call: CallbackQuery, state: FSMContext) -> None:
     await FSMUser.profit_money.set()
     async with state.proxy() as data:
         data['profit'] = call.data
-
+    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                text=f'Вы выбрали {profile_user.get(call.data)}')
     if call.data in profile_user.keys():
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                    text=f'Вы выбрали {profile_user.get(call.data)}'
-                                         f'\nТеперь выберите категорию',
-                                    reply_markup=nav.marcup_money)
+        await call.message.answer('Теперь выберите категорию', reply_markup=nav.marcup_money)
 
 
 @dp.callback_query_handler(state=FSMUser.profit_money)
