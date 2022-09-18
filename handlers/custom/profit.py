@@ -1,85 +1,43 @@
 from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from aiogram.types import Message, CallbackQuery
-from filters.extension_filters import ProfitFilter, Number
+from filters.extension_filters import Number
 import keyboards.inline as nav
 from states.state_user import FSMUser
-from database.profitdb import *
-from database.walletdb import WalletDB
+from database.accountant import Profit, WalletProfit, WalletDB, RegisterUser
+from peewee import DoesNotExist, OperationalError
 from logger.log import logger
+from aiogram_dialog import StartMode, DialogManager
+from aiogram_dialog.widgets.kbd import Button
 
-profile_user = {'salary': 'заработная платы', 'part_time_job': 'подработка', 'sale': 'продажа'}
-
-
-async def wallet_money(message: Message, state: FSMContext) -> None:
-    """
-    Функция для создания таблицы кошелек и прибавляет сумму денег
-
-    :param state:
-    :param message:
-    :return:
-    """
-    async with state.proxy() as data:
-        profit_money = data.get('profit_money')
-
-    money_new_card = 0
-    money_new_cash = 0
-    money_credit = 0
-    if profit_money == 'card':
-        money_new_card = int(message.text)
-    elif profit_money == 'cash':
-        money_new_cash = int(message.text)
-    else:
-        money_new_card = int(message.text.split()[1])
-        money_new_cash = int(message.text.split()[0])
-    money_profit = money_new_card + money_new_cash
-
-    WalletDB.create_table()
-    try:
-        money = WalletDB.select().where(WalletDB.id == 1).get()
-        money_new_card += money.money_card
-        money_new_cash += money.money_cash
-        money_credit = money.money_credit
-
-        wall = WalletDB.update(money_card=money_new_card, money_cash=money_new_cash).where(WalletDB.id == 1)
-        wall.execute()
-
-    except DoesNotExist as exc:
-        logger.info(f'{exc.__class__.__name__}, {exc}')
-        WalletDB.create(money_card=money_new_card, money_cash=money_new_cash)
-    money_sum = money_new_card + money_new_cash
-    await bot.send_message(message.chat.id, f'Ваш баланс пополнился на: <b>{money_profit}</b> ₱'
-                                            f'\nБаланс:'
-                                            f'\nНа карте:  <b>{money_new_card}</b> ₱'
-                                            f'\nНаличные: <b>{money_new_cash}</b> ₱'
-                                            f'\nЗадолженность по кредитке: <b>{money_credit}</b> ₱'
-                                            f'\nОбщая сумма: <b>{money_sum - money_credit}</b> ₱')
+profile_user = {'salary': 'заработная плата', 'part_time_job': 'подработка', 'gift': 'подарок', 'sale': 'продажа'}
 
 
-@dp.message_handler(ProfitFilter(), state='*')
-async def get_profit(message: Message) -> None:
+@logger.catch()
+async def profit(call: CallbackQuery, button: Button, dialog_manager: DialogManager) -> None:
     """
     Функция для приема команды Прибыль
-    :param message:
+    :param button:
+    :param dialog_manager:
+    :param call:
     :return:
     """
-    logger.info('Зашел добывать прибыль')
-    await FSMUser.profit.set()
-    await message.answer('Что добавить?', reply_markup=nav.marcup_profit)
+    logger.info(f'Пользователь {call.from_user.first_name} зашел добывать прибыль')
+    await dialog_manager.start(FSMUser.profit, mode=StartMode.RESET_STACK)
 
 
-@dp.callback_query_handler(state=FSMUser.profit)
-async def call_profit(call: CallbackQuery, state: FSMContext) -> None:
+async def call_profit(call: CallbackQuery, button: Button, dialog_manager: DialogManager) -> None:
     """
-    Функция для отлавливания кнопок marcup_profit
+    Функция для отлавливания кнопок прибыль
+    :param dialog_manager:
+    :param button:
     :param call:
-    :param state:
     :return:
     """
     logger.info(f'Добавить прибыль: {profile_user.get(call.data)}')
     await FSMUser.profit_money.set()
-    async with state.proxy() as data:
-        data['profit'] = call.data
+    async with dialog_manager.data.get('state').proxy() as data:
+        data['profit'] = profile_user.get(call.data)
     await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                 text=f'Вы выбрали {profile_user.get(call.data)}')
     if call.data in profile_user.keys():
@@ -95,27 +53,29 @@ async def call_profit_money(call: CallbackQuery, state: FSMContext) -> None:
     :return:
     """
     profile_money = {'card': 'карту', 'cash': 'наличные', 'card_cash': 'нал безнал'}
-    profit = profile_money.get(call.data)
+    profit_ = profile_money.get(call.data)
     logger.info(f'Пополнить: {profit}')
     await FSMUser.user_profit.set()
     async with state.proxy() as data:
         data['profit_money'] = call.data
-
     if call.data in profile_money.keys():
         await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                    text=f'Пополнить {profit}')
+                                    text=f'Пополнить {profit_}')
 
 
 @dp.message_handler(Number(), state=FSMUser.user_profit)
 @logger.catch()
-async def get_profit(message: Message, state: FSMContext) -> None:
+async def get_profit(message: Message, dialog_manager: DialogManager, state: FSMContext) -> None:
     """
     Функция для создании таблицы (Profit, WalletProfit)  и добавления в нее информации
+    :param dialog_manager:
     :param message:
     :param state:
     :return:
     """
     logger.info(f'Сумма к добавлению: {message.text}')
+
+    user_id = RegisterUser.get(RegisterUser.user_id == message.from_user.id)
 
     async with state.proxy() as data:
         profit_user = data.get('profit')
@@ -134,17 +94,56 @@ async def get_profit(message: Message, state: FSMContext) -> None:
         await message.answer('Данные ведены неверно. Попробуйте еще раз.\nВведите через пробел нал безнал')
         return
 
-    Profit.create_table()
-    profit = None
+    profit_ = None
     try:
-        profit = Profit.select().where(Profit.name == profile_user.get(profit_user)).get()
-    except DoesNotExist as exc:
-        logger.info(f'{exc.__class__.__name__}, {exc}')
-        profit = Profit.create(name=profile_user.get(profit_user)).select(). \
-            where(Profit.name == profile_user.get(profit_user)).get()
+        profit_, created = Profit.get_or_create(name=profit_user)
     except OperationalError as exc:
         logger.error(f'{exc.__class__.__name__}, {exc}')
     WalletProfit.create_table()
-    WalletProfit.create(user_id=message.from_user.id, profit_name=profit, money_card=card, money_cash=cash)
-    await wallet_money(message, state)
+    WalletProfit.create(user_id=user_id.id, profit_name=profit_, money_card=card, money_cash=cash)
+    await wallet_money(message, dialog_manager, state)
     await state.finish()
+
+
+async def wallet_money(message: Message, dialog_manager: DialogManager, state: FSMContext) -> None:
+    """
+    Функция для создания таблицы кошелек и прибавляет сумму денег
+
+    :param dialog_manager:
+    :param state:
+    :param message:
+    :return:
+    """
+    user_id = RegisterUser.get(RegisterUser.user_id == message.from_user.id)
+    async with state.proxy() as data:
+        profit_money = data.get('profit_money')
+
+    money_new_card = 0
+    money_new_cash = 0
+    if profit_money == 'card':
+        money_new_card = int(message.text)
+    elif profit_money == 'cash':
+        money_new_cash = int(message.text)
+    else:
+        money_new_card = int(message.text.split()[1])
+        money_new_cash = int(message.text.split()[0])
+    money_profit = money_new_card + money_new_cash
+
+    try:
+        money = WalletDB.select().where(WalletDB.id == 1).get()
+        money_new_card += money.money_card
+        money_new_cash += money.money_cash
+
+        wall = WalletDB.update(
+            money_card=money_new_card, money_cash=money_new_cash
+        ).where(WalletDB.user_id == user_id.id)
+        wall.execute()
+
+    except DoesNotExist as exc:
+        logger.info(f'{exc.__class__.__name__}, {exc}')
+        WalletDB.create(user_id=user_id.id, money_card=money_new_card, money_cash=money_new_cash)
+    except OperationalError as exc:
+        logger.error(f'{exc.__class__.__name__} {exc}')
+    await bot.send_message(message.chat.id, f'Ваш баланс пополнился на: <b>{money_profit}</b> ₱')
+
+    await dialog_manager.start(FSMUser.start, mode=StartMode.NEW_STACK)

@@ -1,5 +1,6 @@
 loguru~=0.6.0
 aiogram~=2.22.1
 peewee~=3.15.2
-python-dotenv~=0.20.0
+python-dotenv~=0.21.0
 schedule==1.1.0
+aiogram-dialog~=1.9
