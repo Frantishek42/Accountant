@@ -1,3 +1,5 @@
+from asyncio import sleep
+
 from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from aiogram.types import Message, CallbackQuery
@@ -53,8 +55,9 @@ async def call_profit_money(call: CallbackQuery, state: FSMContext) -> None:
     :return:
     """
     profile_money = {'card': 'карту', 'cash': 'наличные', 'card_cash': 'нал безнал'}
+
     profit_ = profile_money.get(call.data)
-    logger.info(f'Пополнить: {profit}')
+    logger.info(f'Пополнить: {profit_}')
     await FSMUser.user_profit.set()
     async with state.proxy() as data:
         data['profit_money'] = call.data
@@ -144,6 +147,10 @@ async def wallet_money(message: Message, dialog_manager: DialogManager, state: F
         WalletDB.create(user_id=user_id.id, money_card=money_new_card, money_cash=money_new_cash)
     except OperationalError as exc:
         logger.error(f'{exc.__class__.__name__} {exc}')
-    await bot.send_message(message.chat.id, f'Ваш баланс пополнился на: <b>{money_profit}</b> ₱')
+    with open('media/gif/money.gif', 'rb') as file:
+        file_id = await bot.send_animation(chat_id=message.chat.id, animation=file, duration=None,
+                                           caption=f'Ваш баланс пополнился на: <b>{money_profit}</b> ₱')
+    await sleep(3)
+    await bot.delete_message(chat_id=message.chat.id, message_id=file_id.message_id)
+    await dialog_manager.start(FSMUser.profit, mode=StartMode.NEW_STACK)
 
-    await dialog_manager.start(FSMUser.start, mode=StartMode.NEW_STACK)

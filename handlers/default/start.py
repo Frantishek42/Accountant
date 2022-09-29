@@ -2,6 +2,8 @@ from typing import Dict
 from config_data.config import ADMIN
 from filters.extension_filters import UserRegister
 from aiogram.types import Message, CallbackQuery
+from handlers.custom.admin import admin, get_count_user, get_count_subscriber
+from handlers.custom.expenses import get_expenses, call_expenses
 from handlers.custom.profit import profit, call_profit
 from states.state_user import FSMUser
 from aiogram.dispatcher import FSMContext
@@ -32,12 +34,6 @@ def is_admin(data: Dict, widget: Whenable, manager: DialogManager):
 
 
 @logger.catch()
-async def go_clicked(call: CallbackQuery, button: Button, manager: DialogManager):
-    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
-                                text='Go click')
-
-
-@logger.catch()
 async def get_data(state: FSMContext, **kwargs):
     async with state.proxy() as data:
         user_id = data.get('user_id')
@@ -53,8 +49,8 @@ async def get_data(state: FSMContext, **kwargs):
 
     except DoesNotExist as exc:
         logger.info(f'{exc.__class__.__name__} {exc}')
-    return {'name': (f"{text}\n💳 Карта: <b>{card}</b>💵 Наличные: <b>{cash}</b> 🏦 Кредит: <b>{credit}</b>"
-                     f"\n💰 Общая: <b>{card + cash - credit}</b>")
+    return {'name': (f"{text}\n💳 Карта: <b>{card}</b> 💵 Наличные: <b>{cash}"
+                     f"\n</b> 🏦 Кредит: <b>{credit}</b> 💰 Общая: <b>{card + cash - credit}</b>")
             }
 
 
@@ -64,7 +60,14 @@ async def home_menu(call: CallbackQuery, button: Button, dialog_manager: DialogM
         data['user_id'] = call.from_user.id
 
     await dialog_manager.dialog().switch_to(FSMUser.home)
+
     logger.info(f'Пользователь {call.from_user.first_name} зашел в главное меню')
+
+
+@logger.catch()
+async def go_clicked(call: CallbackQuery, button: Button, manager: DialogManager):
+    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                text='Go click')
 
 
 main_window = Dialog(
@@ -78,7 +81,7 @@ main_window = Dialog(
                 Button(Const("⚙ Настройка"), id="settings", on_click=go_clicked),
                 when="extended",
             ),
-            Button(Const("Admin"), id="admin", when=is_admin),
+            Button(Const("Admin"), id="admin", on_click=admin, when=is_admin),
         ),
         state=FSMUser.start,
         getter=get_admin
@@ -87,8 +90,8 @@ main_window = Dialog(
         Format("<b>≡ Главное меню</b>\n\n{name}"),
         Row(
             Button(Const("📈 Прибыль"), id="profit", on_click=profit),
-            Button(Const("📉 Затраты"), id="expenses", on_click=go_clicked),
-            Button(Const("👛 Кошелек"), id="wallet", on_click=go_clicked),
+            Button(Const("📉 Затраты"), id="expenses", on_click=get_expenses),
+            Button(Const("⌛ Автоплатеж"), id="auto_payment", on_click=go_clicked),
         ),
         Button(Const("📖 Отчет"), id="report", on_click=go_clicked),
         Button(Const("⚙ Настройка"), id="settings", on_click=go_clicked),
@@ -107,6 +110,33 @@ main_window = Dialog(
         ),
         Button(Const("≡ Главное меню"), id="nothing", on_click=home_menu),
         state=FSMUser.profit,
+    ),
+    Window(
+        Const("Вы зашли в меню затраты"),
+        Row(
+            Button(Const("🍱 Продукты"), id="products", on_click=call_expenses),
+            Button(Const("🍺 Алкоголь"), id="alcohol", on_click=call_expenses),
+            Button(Const("🏠 ЖКХ"), id="communal", on_click=call_expenses),
+        ),
+        Row(
+            Button(Const("🏎 АЗС"), id="gas_station", on_click=call_expenses),
+            Button(Const("🚗 Машина"), id="car", on_click=call_expenses),
+            Button(Const("🌐 Инт. магазин"), id="online_store", on_click=call_expenses),
+        ),
+        Row(
+            Button(Const("👕 Одежда"), id="clothes", on_click=call_expenses),
+            Button(Const("☎ Связь"), id="connection", on_click=call_expenses),
+            Button(Const("🏖 Отдых"), id="rest", on_click=call_expenses),
+        ),
+        Button(Const("✙ Добавить / Выбрать свое"), id="add_choose", on_click=call_expenses),
+        Button(Const("≡ Главное меню"), id="nothing", on_click=home_menu),
+        state=FSMUser.expenses,
+    ),
+    Window(
+        Const("Admin панель"),
+        Button(Const('Кол-во пользователей'), id='count_user', on_click=get_count_user),
+        Button(Const('Кол-во подписчиков'), id='count_subscriber', on_click=get_count_subscriber),
+        state=FSMUser.admin
     )
 )
 
@@ -124,6 +154,9 @@ async def process_start_command(message: Message, dialog_manager: DialogManager,
     :return:
     """
     logger.info(f'Пользователь {message.from_user.first_name} зашел в меню')
+    data = await state.get_data()
+    if data is not None:
+        await state.finish()
     await message.answer(f"Добро пожаловать {message.from_user.first_name}!")
     async with state.proxy() as data:
         data['user_name'] = message.from_user.first_name

@@ -8,13 +8,15 @@ class FSMUser(StatesGroup):
     start = State()
     user_id = State()
     user_name = State()
+    admin = State()
     home = State()
     register_user = State()
     profit = State()
     profit_money = State()
     user_profit = State()
     expenses = State()
-    expenses_other = State()
+    other = State()
+    expenses_add = State()
     expenses_money = State()
     user_expenses = State()
     expenses_card_cash = State()
@@ -31,3 +33,10 @@ class FSStart(StatesGroup):
     """
     start = State()
     register_user = State()
+
+
+class FSExpenses(StatesGroup):
+    """
+
+    """
+    other = State()

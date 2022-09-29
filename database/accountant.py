@@ -74,10 +74,11 @@ class Expenses(BasesModel):
         name: str = Название затрат
     """
     name = TextField()
+    user_id = ForeignKeyField(RegisterUser, to_field='id', on_delete='cascade')
 
     class Meta:
         db_table = 'expenses'
-        order_by = 'name'
+        order_by = ['name']
 
 
 class WalletExpenses(BasesModel):

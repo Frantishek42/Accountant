@@ -4,6 +4,7 @@ from database.accountant import RegisterUser
 import keyboards.inline as nav
 from logger.log import logger
 from states.state_user import FSMUser
+from aiogram.dispatcher import FSMContext
 
 
 class UserRegister(BoundFilter):
@@ -52,9 +53,10 @@ class ProfitFilter(BoundFilter):
         return message.text == '📈 Прибыль'
 
 
-class ExpensesFilter(BoundFilter):
-    async def check(self, message: types.Message) -> bool:
-        return message.text == '📉 Затраты'
+# class ExpensesAddFilter(BoundFilter):
+#     async def check(self, message: types.Message) -> bool:
+#         if len(message.text.split()) >= 1:
+#         return message.text.isalpha()
 
 
 class WalletFilter(BoundFilter):
@@ -72,8 +74,17 @@ class Number(BoundFilter):
         if len(message.text.split()) == 1:
             if message.text.isdigit():
                 return True
+            else:
+                await message.answer('Вы вели не верные данные. Введите заново целое число')
         elif len(message.text.split()) == 2:
             if message.text.split()[0].isdigit() and message.text.split()[1].isdigit():
                 return True
-        await message.answer('Вы вели не верные данные. Введите заново целое число')
+            else:
+                await message.answer('Вы вели не верные данные. Введите заново 2 числа (нал. безнал)')
+
         return False
+
+
+async def get_user_id(state: FSMContext) -> int:
+    async with state.proxy() as data:
+        return data.get('user_id')

@@ -1,8 +1,11 @@
 from aiogram.types import Message
-
+from peewee import OperationalError, DoesNotExist
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from logger.log import logger
+import math
 
 # <--- InlineKeyboardButton для menu profit --->
+from database.accountant import RegisterUser, Expenses
 from database.auto_payment import AutoPayment
 
 marcup_profit = InlineKeyboardMarkup(row_width=2)
@@ -72,3 +75,40 @@ def marcup_auto_payment(message: Message):
     back_auto = InlineKeyboardButton(text='🔙 Назад', callback_data='back')
     marcup_auto.add(*auto_list, auto_add, back_auto)
     return marcup_auto
+
+
+@logger.catch()
+def marcup_expenses_user(message: Message, prev=0, next_=1):
+    user_id = RegisterUser.get(RegisterUser.user_id == message.chat.id)
+    prev_page = InlineKeyboardButton(text='«', callback_data=f'prev:{prev}')
+    page_button = InlineKeyboardButton(text=f'{next_}', callback_data=f'{next_}')
+    exp_buttons = []
+    try:
+        expenses_user = Expenses.select().where(Expenses.user_id == user_id.id).order_by(Expenses.name)
+        page = math.ceil(expenses_user.count() / 3 / 3)
+        next_page = InlineKeyboardButton(text='»', callback_data=f'next:{next_}:{page}')
+        count = 0
+        exp_count = 0
+        for i_page in range(page):
+            if next_ == i_page+1:
+                for ind, exp in enumerate(expenses_user):
+                    if exp_count <= ind:
+                        count += 1
+                        exp_buttons.append(InlineKeyboardButton(text=exp.name, callback_data=exp.name))
+                    if count == 9:
+                        break
+                break
+            exp_count += 9
+        if len(exp_buttons) < 9:
+            for i in range(9 - len(exp_buttons)):
+                exp_buttons.append(InlineKeyboardButton(text=' ', callback_data=' '))
+    except (OperationalError, DoesNotExist) as exc:
+        logger.error(f'{exc}')
+    marcup_exp = InlineKeyboardMarkup(row_width=3)
+    auto_add = InlineKeyboardButton(text='✙ Добавить', callback_data='add')
+    back_auto = InlineKeyboardButton(text='🔙 Назад', callback_data='back')
+    marcup_exp.add(*exp_buttons)
+    marcup_exp.add(prev_page, page_button,  next_page)
+    marcup_exp.add(auto_add)
+    marcup_exp.add(back_auto)
+    return marcup_exp
