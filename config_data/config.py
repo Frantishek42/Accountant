@@ -8,9 +8,4 @@ else:
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 ADMIN = os.getenv('ADMIN_KEY')
-
-DEFAULT_COMMANDS = (
-    ('start', "Запустить бота"),
-    ('help', "Вывести справку"),
-
-)
+YOOTOKEN = os.getenv('YOOTOKEN')

@@ -1,9 +1,11 @@
 from loader import dp
 from aiogram.types import Message
+from logger.log import logger
 
 
 @dp.message_handler(commands=['help'], state='*')
 async def process_help_command(message: Message):
+    logger.info(f'Пользователь {message.from_user.first_name} зашел в команду помощь')
     await message.reply(
         "К вашему внимания представляю возможности бота 🤖 кошелек 👛:\n"
         "\nВы можете добавлять доходы 📈 и расходы 📉. На главной странице выводиться сколько денег "

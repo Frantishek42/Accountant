@@ -1,5 +1,4 @@
 from asyncio import sleep
-
 from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from aiogram.types import Message, CallbackQuery
@@ -24,6 +23,7 @@ async def profit(call: CallbackQuery, button: Button, dialog_manager: DialogMana
     :param call:
     :return:
     """
+    print(call.data)
     logger.info(f'Пользователь {call.from_user.first_name} зашел добывать прибыль')
     await dialog_manager.start(FSMUser.profit, mode=StartMode.RESET_STACK)
 
@@ -43,19 +43,26 @@ async def call_profit(call: CallbackQuery, button: Button, dialog_manager: Dialo
     await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
                                 text=f'Вы выбрали {profile_user.get(call.data)}')
     if call.data in profile_user.keys():
-        await call.message.answer('Теперь выберите категорию', reply_markup=nav.marcup_money)
+        await call.message.answer('Теперь выберите вид зачисление', reply_markup=nav.marcup_money)
 
 
 @dp.callback_query_handler(state=FSMUser.profit_money)
-async def call_profit_money(call: CallbackQuery, state: FSMContext) -> None:
+async def call_profit_money(call: CallbackQuery, state: FSMContext, dialog_manager: DialogManager) -> None:
     """
     Функция для отлавливания кнопок marcup_money
+    :param dialog_manager:
     :param call:
     :param state:
     :return:
     """
     profile_money = {'card': 'карту', 'cash': 'наличные', 'card_cash': 'нал безнал'}
 
+    if call.data in 'back':
+        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                    text='Вернутся в меню прибыли')
+        await dialog_manager.start(FSMUser.profit, mode=StartMode.NEW_STACK)
+        await state.finish()
+        return
     profit_ = profile_money.get(call.data)
     logger.info(f'Пополнить: {profit_}')
     await FSMUser.user_profit.set()

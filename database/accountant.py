@@ -1,5 +1,7 @@
 from datetime import datetime
 from peewee import *
+import time
+from logger.log import logger
 
 db = SqliteDatabase('database/accountant.db')
 
@@ -13,15 +15,44 @@ class BasesModel(Model):
 class RegisterUser(BasesModel):
     """
     Таблица для добавления зарегистрированных пользователей
+    Argument:
+        register_date: дата регистрации пользователя выставляется автоматически
+        user_id: добавляется id пользователя
+        first_name: добавляется имя пользователя
     """
     register_date = DateTimeField(default=datetime.now())
     user_id = IntegerField()
     first_name = CharField()
-    private_date = IntegerField(default=0)
-    private = BooleanField(default=False)
 
     class Meta:
         db_table = 'register_user'
+
+
+class UserSubscription(BasesModel):
+    """
+        Таблица для добавления пользователей которые оформили подписку
+        Argument:
+            user_id: добавляется id user_id с таблицы register_user
+            private_date: дата покупки подписки
+            private_date: кол-во дней подписки
+            private: подключения подписки
+
+        """
+    user_id = ForeignKeyField(RegisterUser, to_field='id', on_delete='cascade')
+    time_sub = TimeField()
+
+    class Meta:
+        db_table = 'user_private'
+        order_by = ['private_date']
+
+    def get_time_sub(self, user_id):
+        id_user_id = RegisterUser.get(RegisterUser.user_id == user_id)
+        try:
+            time_sub = self.get(UserSubscription.user_id == id_user_id)
+            if int(time_sub.time_sub) >= int(time.time()):
+                return True
+        except DoesNotExist as exc:
+            logger.info(f'Таблица подписки ')
 
 
 class MergeWithUser(BasesModel):
@@ -124,6 +155,7 @@ class AutoPayment(BasesModel):
     class Meta:
         database = db
         db_table = 'auto_payment'
+        order_by = 'name'
 
 
 class WalletDB(BasesModel):
