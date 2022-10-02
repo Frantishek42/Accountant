@@ -55,3 +55,5 @@ async def get_count_subscriber(call: CallbackQuery, button: Button, dialog_manag
         await dialog_manager.data.get('state').finish()
     except DoesNotExist as exc:
         logger.info(f'Таблица пользователей с подпиской пуста {exc.__class__.__name__}')
+    except OperationalError as exc:
+        logger.error(f'Таблица пользователей с подписками не создана {exc.__class__.__name__}')
